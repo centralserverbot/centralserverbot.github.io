@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commands</title>
+  <link rel="icon" href="../iconblue.png">
+  <link rel="stylesheet" href="commands.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
+</head>
+
+<body onload="loaderFunction()">
+
+  <div id="loader">
+    <div class="loading">
+      <span></span>
+    </div>
+  </div>
+
+
+  <div id="page">
+    <nav>
+      <div class="logo noselect">
+        <img class="noselect" src="../icon.png"> Central
+      </div>
+
+      <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
+      <ul class="mainMenu noselect">
+        <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a class="active" href="#"><i class="far fa-list-alt"></i> Commands</a></li>
+        <li><a href="../pages/about.html"><i class="fas fa-quote-left"></i> About</a></li>
+        <li><a href="https://discord.gg/23ayhRann6" target="_none"><i class="fas fa-headset"></i> Support</a></li>
+        <li><a class="invite noselect" href="https://discord.com/api/oauth2/authorize?client_id=1173444104684847116&permissions=8&scope=bot" target="_none"><i
+              class="fab fa-discord"></i> Add to server</a></li>
+        <div class="closeMenu noselect"><i class="fa fa-times"></i></div>
+      </ul>
+    </nav>
+
+
+
+    <div class="container clear noselect">
+      <div class="row wrapper">
+
+        <span class="collapse" onclick="closeSidePanel()"><i class="fas fa-caret-left"></i></span>
+        <span class="expand" onclick="openSidePanel()"><i class="fas fa-caret-right"></i></span>
+
+        <div class="sidepanel">
+          <div class="divider left"></div>
+        
+          <a class="title" href="#serverstarter">Server Starter</a>
+          <ul>
+            <li class="section" onclick="scrollToSection('serverstarter')">Server Starter Commands</li>
+          </ul>
+        
+          <div class="divider left"></div>
+        
+          <a class="title" href="#highrank">High Rank</a>
+          <ul>
+            <li class="section" onclick="scrollToSection('highrank')">High Rank Commands</li>
+          </ul>
+        
+          <div class="divider left"></div>
+        
+          <a class="title" href="#general">General</a>
+          <ul>
+            <li class="section" onclick="scrollToSection('general')">General Commands</li>
+          </ul>
+        
+          <div class="divider left"></div>
+        
+          <a class="title" href="#economy">Economy</a>
+          <ul>
+            <li class="section" onclick="scrollToSection('economy')">Economy Commands</li>
+          </ul>
+        </div>
+        
+        
+
+        <div class="right-col">
+          <h1 id="commands">Commands</h1>
+          <div>Syntax:
+            <ul>
+              <li><span class="codeBlock">{ }</span> : Required Argument</li>
+              <li><span class="codeBlock">[ ]</span> : Optional Argument</li>
+              <li><span class="codeBlock">( )</span> : Command Aliases</li>
+            </ul>
+          </div>
+        
+          <h2  id="serverstarter">Server Starter Commands</h2>
+          <ul>
+            <li><span class="codeBlock">/session</span></li>
+            <li><span class="codeBlock">/sessionvote</span></li>
+            <li><span class="codeBlock">/shutdown</span></li>
+            <li><span class="codeBlock">/lowplayers</span></li>
+            <li><span class="codeBlock">/full</span></li>
+          </ul>
+        
+          <h2 id="highrank" >High Rank Commands</h2>
+          <ul>
+            <li><span class="codeBlock">/infract target reason punishment</span></li>
+            <li><span class="codeBlock">/listinfractions target</span></li>
+            <li><span class="codeBlock">/deleteinfraction target case</span></li>
+            <li><span class="codeBlock">/bolo user reason proof</span></li>
+            <li><span class="codeBlock">/bololist user</span></li>
+            <li><span class="codeBlock">/config</span></li>
+            <li><span class="codeBlock">/item add name price collection</span></li>
+            <li><span class="codeBlock">/item remove name</span></li>
+          </ul>
+        
+          <h2 id="general">General Commands</h2>
+          <ul>
+            <li><span class="codeBlock">-ping</span></li>
+            <li><span class="codeBlock">-id [username]</span></li>
+            <li><span class="codeBlock">-membercount</span></li>
+            <li><span class="codeBlock">-membersearch [query]</span></li>
+            <li><span class="codeBlock">-whois [ID, @Mention, Username, Or Blank]</span></li>
+          </ul>
+        
+          <h2 id="economy">Economy Commands</h2>
+          <ul>
+            <li><span class="codeBlock">-economyenable</span></li>
+            <li><span class="codeBlock">-economydisable</span></li>
+            <li><span class="codeBlock">-economyreset</span></li>
+            <li><span class="codeBlock">-bal</span></li>
+            <li><span class="codeBlock">-say [message]</span></li>
+            <li><span class="codeBlock">-with [ammount]</span></li>
+            <li><span class="codeBlock">-rob [@Mention]</span></li>
+            <li><span class="codeBlock">-pay [@Mention]</span></li>
+            <li><span class="codeBlock">-buy {tem name}</span></li>
+            <li><span class="codeBlock">-collect</span></li>
+            <li><span class="codeBlock">-store</span></li>
+            <li><span class="codeBlock">-lb</span></li>
+          </ul>
+        </div>
+        
+        
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function scrollToSection(sectionId) {
+      var element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script src="../index.js"></script>
+  <script src="./commands.js"></script>
+</body>
+
+</html>
