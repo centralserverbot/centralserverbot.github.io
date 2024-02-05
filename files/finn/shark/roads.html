@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fullscreen Video with Audio</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        audio {
+            display: none; /* Hide the audio controls if you don't want them visible */
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted>
+        <source src="roads.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <audio src="/roads.mp3" autoplay>
+        <p>If you are reading this, it is because your browser does not support the audio element.</p>
+        </audio>
+
+    <!-- Optional: Add controls for the user to play/pause the video and audio -->
+    <!-- <button onclick="togglePlayPause()">Play/Pause</button> -->
+
+    <script>
+        // Optional JavaScript function to toggle play/pause
+        function togglePlayPause() {
+            var video = document.querySelector('video');
+           
+
+            if (video.paused) {
+                video.play();
+              
+            } else {
+                video.pause();
+             
+            }
+        }
+    </script>
+</body>
+
+</html>
