@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <link rel="stylesheet" href="../index.css">
+    <style>
+
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #666;
+            color: #fff;
+        }
+
+
+        input[type="file"] {
+            background-color: #666;
+        }
+
+        input[type="submit"] {
+            background-color: #88d7ff;
+            color: #444;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgba(136, 215, 255,0.7);
+        }
+    </style>
+</head>
+<body>
+<br>
+<form id="inputForm" enctype="multipart/form-data">
+    <label for="user">Your Discord ID: *</label>
+    <input type="number" id="submiter" name="submiter" required>
+
+    <label for="user">User to be BOLOed's Discord ID: *</label>
+    <input type="number" id="user" name="user" required>
+
+    <label for="reasoning">Reasoning: *</label>
+    <textarea id="reasoning" name="reasoning" rows="4" required></textarea>
+
+    <label for="proof">Proof: (image URL) *</label>
+    <input type="url" id="proof" name="proof" required pattern="https?://.+">
+
+    <label for="proof2">Proof2: (image URL)</label>
+    <input type="url" id="proof2" name="proof2" pattern="https?://.+">
+
+    <label for="proof3">Proof3: (image URL)</label>
+    <input type="url" id="proof3" name="proof3" pattern="https?://.+">
+
+    <label for="proof4">Proof4: (image URL)</label>
+    <input type="url" id="proof4" name="proof4" pattern="https?://.+">
+
+    <label for="proof5">Proof5: (image URL)</label>
+    <input type="url" id="proof5" name="proof5" pattern="https?://.+">
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    document.getElementById('inputForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Gather form data
+        const formData = new FormData(event.target);
+
+        // Convert form data to a plain JavaScript object
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        // Send data to your API
+        const apiUrl = 'https://f986-2601-c6-d380-7710-481b-4b00-f6b5-3f61.ngrok-free.app/boloCreate'; // Replace with your API endpoint
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(responseData => {
+            console.log('Data sent successfully:', responseData);
+            // Optionally, you can add logic to handle the response from the API
+
+
+            alert('Submitted for approval');
+
+            // Redirect to a different link after the alert is closed
+            window.location.href = 'https://centralbot.xyz/'; // Replace with your redirect link
+        })
+        .catch(error => {
+            console.error('Error sending data to the API:', error);
+        });
+    });
+</script>
+
+
+</body>
+</html>
