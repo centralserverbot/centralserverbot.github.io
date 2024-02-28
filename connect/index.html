@@ -24,9 +24,9 @@ const avurl = urlParams.get('avurl')
     const av = CryptoJS.AES.decrypt(avurl, 'avurl')
 
 
-    let decryptuser = user.toString(CryptoJS.enc.Utf8);
+    let decryptuser = CryptoJS.enc.Base64.stringify(user)
 
-    let decryptid = id.toString(CryptoJS.enc.Utf8);
+    let decryptid = CryptoJS.enc.Base64.stringify(id)
 
     let decryptAvurl = CryptoJS.enc.Base64.stringify(av)
 
