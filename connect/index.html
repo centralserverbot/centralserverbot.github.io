@@ -30,7 +30,7 @@ const avurl = urlParams.get('avurl')
     let decryptid
 
  async function decrypt(){
-   const decryptions =  fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
+   const decryptions = await fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
         method: 'GET',
         headers: {
              'Content-Type': 'application/json',
