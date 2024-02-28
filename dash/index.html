@@ -73,7 +73,10 @@
     <script>
         const username = localStorage.getItem("username")
         const ID = localStorage.getItem('userId')    
-        const avurl = localStorage.getItem('avurl')
+
+
+alert(username)
+alert(ID)
 
         if(!username){
             window.location.href = 'https://centralbot.xyz/login'
@@ -87,7 +90,7 @@
             document.getElementById('username').text = localStorage.getItem('username')
 
             
-            document.getElementById('avurl').src = localStorage.getItem('avurl')
+
     </script>
 </body>
 </html>
