@@ -13,8 +13,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
 const userId = urlParams.get('id');
 
-    const user = CryptoJs.AES.decrypt(username, '646177647761646164')
-    const id = CryptoJs.AES.decrypt(userId, '646177647761646164')
+    const user = CryptoJS.AES.decrypt(username, '646177647761646164')
+    const id = CryptoJS.AES.decrypt(userId, '646177647761646164')
 
     let decryptuser = user.toString(CryptoJS.enc.Utf8);
     let decryptid = id.toString(CryptoJS.enc.Utf8);
