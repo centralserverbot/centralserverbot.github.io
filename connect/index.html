@@ -14,7 +14,7 @@
 try{
 const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
-    alert(username)
+
 
 const userId = urlParams.get('id');
 const avurl = urlParams.get('avurl')
@@ -28,7 +28,7 @@ const avurl = urlParams.get('avurl')
 
     let decryptid = id.toString(CryptoJS.enc.Utf8);
 
-    let decryptAvurl = av.toString(CryptoJS.enc.Utf8);
+    let decryptAvurl = CryptoJS.enc.Base64.stringify(av)
 
   //  console.log(decryptuser, decryptid, decryptAvurl)
 
