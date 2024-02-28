@@ -29,25 +29,31 @@ const avurl = urlParams.get('avurl')
     let decryptAvurl
     let decryptid
 
- async function decrypt(){
-   const decryptions = await fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
+
+ fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
         method: 'GET',
         headers: {
              'Content-Type': 'application/json',
         },
         body: JSON.stringify({ object: obj }),     
-    })
-
-     decryptuser = decryptions.user
+    }).then(responce => responce.json())
+    .then(decryptions => {
+        decryptuser = decryptions.user
      decryptid = decryptions.id
      decryptAvurl = decryptions.avurl
 
      localStorage.setItem("username", decryptuser)
      localStorage.setItem("userId", decryptid)
      localStorage.setItem('avurl', decryptAvurl)
- }
+    })
+    .then(
+        window.location.href = 'https://centralbot.xyz/dash'
+    )
+
+     
+ 
   //  console.log(decryptuser, decryptid, decryptAvurl)
-   decrypt()
+
 
 
 
@@ -58,7 +64,7 @@ const avurl = urlParams.get('avurl')
 
 //thisisanote
 
-    window.location.href = 'https://centralbot.xyz/dash'
+
 
 
 
