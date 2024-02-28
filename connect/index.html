@@ -5,12 +5,17 @@
 <body>
 
 
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 <script>
 // JavaScript on your GitHub Pages site
 const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
 const userId = urlParams.get('id');
+
+    const user = CryptoJs.AES.decrypt(username, '646177647761646164').toString(CryptoJS.enc.Utf8);
+    const id = CryptoJs.AES.decrypt(userId, '646177647761646164').toString(CryptoJS.enc.Utf8);
+
+
 localStorage.setItem("username", username)
 localStorage.setItem("userId", userId)
 
