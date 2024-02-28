@@ -4,69 +4,29 @@
 
 <body>
 
-    <h1>Logging you in....</h1>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-<script async>
+<script>
 
 // JavaScript on your GitHub Pages site
-
-
 const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
-
-
 const userId = urlParams.get('id');
-const avurl = urlParams.get('avurl')
 
-    const obj = {
-        username: username,
-        userId: userId,
-        avurl: avurl
-    }
+    const user = CryptoJS.AES.decrypt(username, '646177647761646164')
+    const id = CryptoJS.AES.decrypt(userId, '646177647761646164')
 
-    let decryptuser
-    let decryptAvurl
-    let decryptid
+    let decryptuser = user.toString(CryptoJS.enc.Utf8);
+    let decryptid = id.toString(CryptoJS.enc.Utf8);
 
+        console.log(decryptuser, decryptid)
 
- fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
-        method: 'GET',
-        headers: {
-             'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ object: obj }),     
-    }).then(responce => responce.json())
-    .then(decryptions => {
-        decryptuser = decryptions.user
-     decryptid = decryptions.id
-     decryptAvurl = decryptions.avurl
-
-     localStorage.setItem("username", decryptuser)
-     localStorage.setItem("userId", decryptid)
-     localStorage.setItem('avurl', decryptAvurl)
-    })
-    .then(
-        window.location.href = 'https://centralbot.xyz/dash'
-    )
-
-     
- 
-  //  console.log(decryptuser, decryptid, decryptAvurl)
-
-
-
-
+localStorage.setItem("username", decryptuser)
+localStorage.setItem("userId", decryptid)
 
 // Now you can use username and userId to update your page content
 
-
-
-//thisisanote
-
-
-
-
+window.location.href = 'https://centralbot.xyz/dash'
 
 </script>
 
