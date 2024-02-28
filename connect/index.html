@@ -31,13 +31,14 @@ const avurl = urlParams.get('avurl')
 
 
 
-localStorage.setItem("username", decryptuser)
-localStorage.setItem("userId", decryptid)
-localStorage.setItem('avurl', decryptAvurl)
+
 
 // Now you can use username and userId to update your page content
 
-setTimeout(() =>{
+setTimeout(async () =>{
+    await localStorage.setItem("username", decryptuser)
+   await localStorage.setItem("userId", decryptid)
+   await localStorage.setItem('avurl', decryptAvurl)
 
     window.location.href = 'https://centralbot.xyz/dash'
 
