@@ -4,6 +4,7 @@
 
 <body>
 
+    <h1>Logging you in....</h1>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 <script>
@@ -18,17 +19,17 @@ const avurl = urlParams.get('avurl')
     const id = CryptoJS.AES.decrypt(userId, 'centralbotispro')
     const av = CryptoJS.AES.decrypt(avurl, 'centralbotispro')
 
-    console.log(user, id)
+// console.log(user, id)
 
     let decryptuser = user.toString(CryptoJS.enc.Utf8);
-    
+
     let decryptid = id.toString(CryptoJS.enc.Utf8);
 
     let decryptAvurl = av.toString(CryptoJS.enc.Utf8);
 
-    console.log(decryptuser, decryptid, decryptAvurl)
+  //  console.log(decryptuser, decryptid, decryptAvurl)
 
-alert('THIS IS A PAUSE: '+decryptAvurl+decryptuser+decryptid)
+
 
 localStorage.setItem("username", decryptuser)
 localStorage.setItem("userId", decryptid)
@@ -36,7 +37,12 @@ localStorage.setItem('avurl', decryptAvurl)
 
 // Now you can use username and userId to update your page content
 
-//window.location.href = 'https://centralbot.xyz/dash'
+setTimeout(() =>{
+
+    window.location.href = 'https://centralbot.xyz/dash'
+
+}, 500)
+
 
 </script>
 

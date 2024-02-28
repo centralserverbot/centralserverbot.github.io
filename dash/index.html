@@ -45,7 +45,7 @@
                 <li><a href="../commands"><i class="far fa-list-alt"></i> Commands</a></li>
                 <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
                 <li><a href="https://discord.gg/VQVCbj284G" target="_none"><i class="fas fa-headset"></i> Support</a></li>
-                <li><a id='username' target="_none"><i class="fas fa-headset"></i> </a></li>
+                <li><img id='avurl' src=''><a id='username' target="_none"><i class="fas fa-headset"></i> </a></li>
                 <div class="closeMenu noselect"><i class="fa fa-times"></i></div>
              </ul>
           </nav>
@@ -73,6 +73,7 @@
     <script>
         const username = localStorage.getItem("username")
         const ID = localStorage.getItem('userId')    
+        const avurl = localStorage.getItem('avurl')
 
         if(!username){
             window.location.href = 'https://centralbot.xyz/login'
@@ -84,6 +85,9 @@
 
 
             document.getElementById('username').innerHTML = localStorage.getItem('username')
+
+            
+            document.getElementById('avurl').src = localStorage.getItem('avurl')
     </script>
 </body>
 </html>
