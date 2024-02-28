@@ -8,12 +8,17 @@
     <script>
         const username = localStorage.getItem("username")
         const ID = localStorage.getItem('userId')    
+        alert(username, ID)
 
-        if(!username || !ID){
+        if(!username){
             window.location.href = 'https://centralbot.xyz/login'
         }
 
-        
+        if(!ID){
+            window.location.href = 'https://centralbot.xyz/login'
+        }
+
+
             var s= document.getElementById('username')
             s.innerHTML = localStorage.getItem('username')
     </script>
