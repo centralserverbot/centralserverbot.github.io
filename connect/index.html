@@ -25,8 +25,12 @@ const avurl = urlParams.get('avurl')
         avurl: avurl
     }
 
+    let decryptuser
+    let decryptAvurl
+    let decryptid
 
-   const decryptions = await fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
+ async function decrypt(){
+   const decryptions =  fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
         method: 'GET',
         headers: {
              'Content-Type': 'application/json',
@@ -34,13 +38,13 @@ const avurl = urlParams.get('avurl')
         body: JSON.stringify({ object: obj }),     
     })
 
-    const decryptuser = decryptions.user
-    const decryptid = decryptions.id
-    const decryptAvurl = decryptions.avurl
+     decryptuser = decryptions.user
+     decryptid = decryptions.id
+     decryptAvurl = decryptions.avurl
 
-
+ }
   //  console.log(decryptuser, decryptid, decryptAvurl)
-
+   decrypt()
 
 
 
