@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="2;url=https://centralbot.xyz/dash/">
+        <meta http-equiv="refresh" content="5;url=https://centralbot.xyz/dash/">
         <title>Redirecting...</title>
     </head>
 
@@ -17,8 +17,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
 const userId = urlParams.get('id');
 
-    const user = CryptoJS.AES.decrypt(username, 'centralbotispro')
-    const id = CryptoJS.AES.decrypt(userId, 'centralbotispro')
+    const user = CryptoJS.AES.decrypt(username, 'username')
+    const id = CryptoJS.AES.decrypt(userId, 'discordid')
 
 
     let decryptuser = user.toString(CryptoJS.enc.Utf8);
