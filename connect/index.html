@@ -21,8 +21,11 @@ const avurl = urlParams.get('avurl')
     console.log(user, id)
 
     let decryptuser = user.toString(CryptoJS.enc.Utf8);
+    
     let decryptid = id.toString(CryptoJS.enc.Utf8);
-    let decryptAvurl = av.toString(CryptoJS.enc.Utf8)
+
+    let decryptAvurl = av.toString(CryptoJS.enc.Utf8);
+
     console.log(decryptuser, decryptid, decryptAvurl)
 
 alert('THIS IS A PAUSE: '+decryptAvurl+decryptuser+decryptid)
@@ -33,7 +36,7 @@ localStorage.setItem('avurl', decryptAvurl)
 
 // Now you can use username and userId to update your page content
 
-window.location.href = 'https://centralbot.xyz/dash'
+//window.location.href = 'https://centralbot.xyz/dash'
 
 </script>
 
