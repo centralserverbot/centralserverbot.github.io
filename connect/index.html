@@ -15,7 +15,7 @@ const username = urlParams.get('username');
     alert(username)
 
 const userId = urlParams.get('id');
-const avurl = 'U2FsdGVkX19t/Q88hM2k9QP3L4NdnxR5aW4H8Yq8sc5UBEwFclRwW+FP+bOyGaFG+39IYjjaxP6ATLkH5s9N5dt4aKV9MKA3ht1n5fu+uNjrydo5OzGuqhrbekiSIGosfc2qMmT3xe+hzjZ6AhfQMQ=='//urlParams.get('avurl')
+const avurl = urlParams.get('avurl')
 
     const user = CryptoJS.AES.decrypt(username, 'username')
     const id = CryptoJS.AES.decrypt(userId, 'discordid')
