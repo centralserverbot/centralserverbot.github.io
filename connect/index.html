@@ -19,6 +19,8 @@ const userId = urlParams.get('id');
     let decryptuser = user.toString(CryptoJS.enc.Utf8);
     let decryptid = id.toString(CryptoJS.enc.Utf8);
 
+        console.log(decryptuser, decryptid)
+
 localStorage.setItem("username", decryptuser)
 localStorage.setItem("userId", decryptid)
 
