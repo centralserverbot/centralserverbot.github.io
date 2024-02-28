@@ -19,16 +19,25 @@ const username = urlParams.get('username');
 const userId = urlParams.get('id');
 const avurl = urlParams.get('avurl')
 
-    const user = CryptoJS.AES.decrypt(username, 'username')
-    const id = CryptoJS.AES.decrypt(userId, 'discordid')
-    const av = CryptoJS.AES.decrypt(avurl, 'avurl')
+    const obj = {
+        username: username,
+        userId: userId,
+        avurl: avurl
+    }
 
 
-    let decryptuser = CryptoJS.enc.Base64.stringify(user)
+   const decryptions = await fetch(`https://central-lively-eagle.ngrok-free.app/decrypt`, {
+        method: 'GET',
+        headers: {
+             'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ object: obj }),     
+    })
 
-    let decryptid = CryptoJS.enc.Base64.stringify(id)
+    const decryptuser = decryptions.user
+    const decryptid = decryptions.id
+    const decryptAvurl = decryptions.avurl
 
-    let decryptAvurl = CryptoJS.enc.Base64.stringify(av)
 
   //  console.log(decryptuser, decryptid, decryptAvurl)
 
