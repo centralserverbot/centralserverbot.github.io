@@ -6,6 +6,14 @@
     <h1 id="username">hi</h1>
 
     <script>
+        const username = localStorage.getItem("username")
+        const ID = localStorage.getItem('userId')    
+
+        if(!username || !ID){
+            window.location.href = 'https://centralbot.xyz/login'
+        }
+
+        
             var s= document.getElementById('username')
             s.innerHTML = localStorage.getItem('username')
     </script>
