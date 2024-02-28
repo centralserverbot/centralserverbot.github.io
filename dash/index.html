@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html>
-
-
 <body>
 
 
- 
-<script>
-  const username = Cookies.get('username');
-  const userId = Cookies.get('userId');
+    <h1 id="username"></h1>
 
-    if(!username || !userId){
-        window.location.href = 'https://central-lively-eagle.ngrok-free.app/login'
-    }
-</script>
-
-
-
+    <script>
+var s=         document.getElementById('username')
+s.value = localStorage.getItem('username')
+    </script>
 </body>
-
-
 </html>
