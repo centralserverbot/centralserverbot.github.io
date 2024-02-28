@@ -12,12 +12,14 @@ const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
 const userId = urlParams.get('id');
 
-    const user = CryptoJs.AES.decrypt(username, '646177647761646164').toString(CryptoJS.enc.Utf8);
-    const id = CryptoJs.AES.decrypt(userId, '646177647761646164').toString(CryptoJS.enc.Utf8);
+    const user = CryptoJs.AES.decrypt(username, '646177647761646164')
+    const id = CryptoJs.AES.decrypt(userId, '646177647761646164')
 
+    let decryptuser = user.toString(CryptoJS.enc.Utf8);
+    let decryptid = id.toString(CryptoJS.enc.Utf8);
 
-localStorage.setItem("username", username)
-localStorage.setItem("userId", userId)
+localStorage.setItem("username", decryptuser)
+localStorage.setItem("userId", decryptid)
 
 // Now you can use username and userId to update your page content
 
