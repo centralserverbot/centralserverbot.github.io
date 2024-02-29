@@ -71,21 +71,9 @@
 
 
     <script>
-        const username = localStorage.getItem("username")
+
         const ID = localStorage.getItem('userId')    
 
-    
-
-
-
-
-
-alert(username)
-alert(ID)
-
-        if(!username){
-            window.location.href = 'https://centralbot.xyz/login'
-        }
 
         if(!ID){
             window.location.href = 'https://centralbot.xyz/login'
@@ -109,11 +97,13 @@ alert(ID)
 
             var div = document.getElementById('avatarContainer')
             div.getElementById('avurl').src = data.url
+
+            document.getElementById('username').innerText = data.username
         })
         .catch(error => console.error('Error fetching URL:', error.message));
 
 
-            document.getElementById('username').innerText = localStorage.getItem('username')
+
 
             
 

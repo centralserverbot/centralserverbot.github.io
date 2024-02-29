@@ -14,19 +14,19 @@
 
 // JavaScript on your GitHub Pages site
 const urlParams = new URLSearchParams(window.location.search);
-const username = urlParams.get('username');
+
 const userId = urlParams.get('id');
 
-    const user = CryptoJS.AES.decrypt(username, 'username')
+
     const id = CryptoJS.AES.decrypt(userId, 'discordid')
 
 
-    let decryptuser = user.toString(CryptoJS.enc.Utf8);
+
     let decryptid = id.toString(CryptoJS.enc.Utf8);
 
         console.log(decryptuser, decryptid)
 
-localStorage.setItem("username", decryptuser)
+
 localStorage.setItem("userId", decryptid)
 
 // Now you can use username and userId to update your page conten
