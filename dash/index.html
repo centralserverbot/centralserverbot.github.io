@@ -36,7 +36,7 @@
        <div id="page">
           <nav>
              <div id="username" class="logo noselect">
-                <img id="avurl" class="noselect"> 
+                <img id="avurl" class="noselect" src="../icon.png"> 
              </div>
     
              <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
@@ -67,7 +67,7 @@
                 </div>
                 <script src="../index.js"></script>
              </div>
-
+          </div>
 
 
     <script defer>
@@ -97,8 +97,8 @@
         .then(data => {
             console.log('Received URL:', data.url);
 
-            var div = document.getElementById('avatarContainer')
-            div.getElementById('avurl').src = data.url
+            
+            document.getElementById('avurl').src = data.url
 
             document.getElementById('username').innerText = data.username
         })
