@@ -24,6 +24,7 @@ const id = CryptoJS.AES.decrypt(userId, 'discordid')
 
 let decryptid = id.toString(CryptoJS.enc.Utf8);
 
+alert(decryptid)
 
 localStorage.setItem("userId", decryptid)
 
