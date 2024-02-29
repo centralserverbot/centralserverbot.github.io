@@ -96,7 +96,7 @@ alert(ID)
                 headers: {
                   'Content-Type': 'application/json',
                  },
-               body: JSON.stringify({ userId }), // Send user ID in the request body
+               body: JSON.stringify({ ID }), // Send user ID in the request body
         })
         .then(response => {
             if (!response.ok) {
