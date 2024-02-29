@@ -18,13 +18,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('id');
 
 
-    const id = CryptoJS.AES.decrypt(userId, 'discordid')
+const id = CryptoJS.AES.decrypt(userId, 'discordid')
 
 
 
-    let decryptid = id.toString(CryptoJS.enc.Utf8);
-
-        console.log(decryptuser, decryptid)
+let decryptid = id.toString(CryptoJS.enc.Utf8);
 
 
 localStorage.setItem("userId", decryptid)
