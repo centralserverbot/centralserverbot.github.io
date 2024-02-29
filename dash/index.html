@@ -91,21 +91,24 @@ alert(ID)
             window.location.href = 'https://centralbot.xyz/login'
         }
 
-        fetch(`https://central-lively-eagle.ngrok-free.app/avurl?id=${ID}`, {
+        fetch('https://central-lively-eagle.ngrok-free.app/avurl', {
             method: 'GET',
             headers: {
-                    "content-type": 'application/json'
-            }
+            'Content-Type': 'application/json',
+            'User-Id': ID, // Add the user ID to the headers
+         },
         })
         .then(response => {
-            console.log(response)
+            if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
         })
-            .then(data => {
-                
-                document.getElementById('avurl').src = data.url
-
-            })
-            .catch(error => console.error('Error fetching URL:', error));
+        .then(data => {
+            console.log('Received URL:', data.url);
+            // You can use the URL as needed
+        })
+        .catch(error => console.error('Error fetching URL:', error.message));
 
 
             document.getElementById('username').innerText = localStorage.getItem('username')
