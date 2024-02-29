@@ -91,7 +91,12 @@ alert(ID)
             window.location.href = 'https://centralbot.xyz/login'
         }
 
-        fetch('https://central-lively-eagle.ngrok-free.app/avurl?id=' + ID)
+        fetch('https://central-lively-eagle.ngrok-free.app/avurl?id=' + ID, {
+            method: 'GET',
+            headers: {
+                    "content-type": 'application/json'
+            }
+        })
             .then(response => response.json())
             .then(data => {
                 
