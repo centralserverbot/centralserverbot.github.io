@@ -92,11 +92,11 @@ alert(ID)
         }
 
         fetch('https://central-lively-eagle.ngrok-free.app/avurl', {
-            method: 'GET',
-            headers: {
-            'Content-Type': 'application/json',
-            'User-Id': ID, // Add the user ID to the headers
-         },
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                 },
+               body: JSON.stringify({ userId }), // Send user ID in the request body
         })
         .then(response => {
             if (!response.ok) {
@@ -106,7 +106,8 @@ alert(ID)
         })
         .then(data => {
             console.log('Received URL:', data.url);
-            // You can use the URL as needed
+
+            document.getElementById('avurl').src = data.url
         })
         .catch(error => console.error('Error fetching URL:', error.message));
 
