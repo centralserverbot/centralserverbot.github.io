@@ -8,6 +8,7 @@
 
 <body>
 
+    <h1 id="welcome"></h1>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 <script>
@@ -24,11 +25,30 @@ const id = CryptoJS.AES.decrypt(userId, 'discordid')
 
 let decryptid = id.toString(CryptoJS.enc.Utf8);
 
-alert(decryptid)
-
 localStorage.setItem("userId", decryptid)
 
 // Now you can use username and userId to update your page conten
+
+fetch('https://central-lively-eagle.ngrok-free.app/avurl', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                 },
+               body: JSON.stringify({ ID }), // Send user ID in the request body
+        })
+        .then(response => {
+            if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Received URL:', data.url);
+
+            document.getElementById('welcome').innerHTML = `Logging you in as ${data.username}!`
+
+        })
+        .catch(error => console.error('Error fetching URL:', error.message));
 
 
 </script>
