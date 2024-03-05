@@ -114,9 +114,13 @@
         .then(responseData => {
             console.log('Data sent successfully:', responseData);
             // Optionally, you can add logic to handle the response from the API
+            let success = 'Submitted for approval!'
 
+            if(responseData.success === false){
+                success = responseData.message
+            }
 
-            alert('Submitted for approval');
+            alert(success);
 
             // Redirect to a different link after the alert is closed
             window.location.href = 'https://centralbot.xyz/'; // Replace with your redirect link
