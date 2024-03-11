@@ -10,16 +10,22 @@
 
     <h1>Logging you in...</h1>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-<script>
+ <script>
 
-// JavaScript on your GitHub Pages site
-const urlParams = new URLSearchParams(window.location.search);
+const userId = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('userId='))
+  .split('=')[1];
 
-const userId = urlParams.get('id');
+// Check if userId is present in cookies
+if (userId) {
+  // Now you can use userId to update your page content
+} else {
+  // Handle the case where userId is not present
+}
 
 
-localStorage.setItem("userId", CryptoJS.AES.decrypt(userId, 'discordid').toString(CryptoJS.enc.Utf8);)
+localStorage.setItem("userId", userId)
 
 // Now you can use username and userId to update your page conten
 
