@@ -25,9 +25,9 @@ console.log('userIdCookie:', userIdCookie);  // Add this line for debugging
 
 // Check if userId cookie is present
 if (userIdCookie) {
-  const userId = userIdCookie.split('=')[1];
-  localStorage.setItem("userId", userId)
-  alert(userId)
+
+  localStorage.setItem("userId", userIdCookie)
+  alert(userIdCookie)
 } else {
   alert('nope')
 }
