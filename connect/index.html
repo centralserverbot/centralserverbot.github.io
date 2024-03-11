@@ -12,13 +12,13 @@
 
  <script>
 
-const userId = document.cookie
+const userIdCookie = document.cookie
   .split('; ')
-  .find(row => row.startsWith('userId='))
-  .split('=')[1];
+  .find(row => row.startsWith('userId='));
 
-// Check if userId is present in cookies
-if (userId) {
+// Check if userId cookie is present
+if (userIdCookie) {
+  const userId = userIdCookie.split('=')[1];
   localStorage.setItem("userId", userId)
   alert(userId)
 } else {
