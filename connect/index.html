@@ -19,13 +19,14 @@ const userId = document.cookie
 
 // Check if userId is present in cookies
 if (userId) {
-  // Now you can use userId to update your page content
+  localStorage.setItem("userId", userId)
+  alert(userId)
 } else {
-  // Handle the case where userId is not present
+  alert('nope')
 }
 
 
-localStorage.setItem("userId", userId)
+
 
 // Now you can use username and userId to update your page conten
 
