@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="refresh" content="5;url=https://centralbot.xyz/dash/">
         <title>Redirecting...</title>
+        <!-- Add this script tag in the head of your HTML file -->
+        <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/dist/jwt-decode.min.js"></script>
+
     </head>
 
 <body>
@@ -12,33 +15,40 @@
 
  <script>
 
-function getCookie(name) {
-  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  if (match) {
-    return match[2];
+
+// Assuming you have a script to get the token from the URL
+const getTokenFromUrl = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('token');
+};
+
+// Function to decode and verify the JWT
+const decodeAndVerifyToken = (token) => {
+  try {
+    // Decode the token (no verification here)
+    const decodedToken = jwt_decode(token);
+
+    // You can access the user ID from the decoded token
+    const userId = decodedToken.userId;
+
+    localStorage.setItem('userId', userId)
+
+    window.location.href = 'https://centralbot.xyz/dash'
+
+    // Now, you can use the user ID as needed
+
+    // If you want to verify the signature, you'll need the server's public key
+    // and use a library like jsonwebtoken to verify the signature
+  } catch (error) {
+    console.error('Error decoding or verifying JWT:', error.message);
   }
-  return null;
+};
+
+// Get the token from the URL and decode/verify it
+const token = getTokenFromUrl();
+if (token) {
+  decodeAndVerifyToken(token);
 }
-
-const userIdCookie = getCookie('userId');
-console.log('userIdCookie:', userIdCookie);  // Add this line for debugging
-
-// Check if userId cookie is present
-if (userIdCookie) {
-
-  localStorage.setItem("userId", userIdCookie)
-  alert(userIdCookie)
-} else {
-  alert('nope')
-}
-
-
-
-
-// Now you can use username and userId to update your page conten
-
-
-
 
 </script>
 
