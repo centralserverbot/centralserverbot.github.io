@@ -14,40 +14,47 @@
     <h1>Logging you in...</h1>
 
  <!-- Add this script tag in the head of your HTML file -->
+<!-- Add this script tag in the head of your HTML file -->
 <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/dist/jwt-decode.min.js"></script>
 
 <!-- Your main script -->
 <script>
-  // Assuming you have a script to get the token from the URL
-  const getTokenFromUrl = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('token');
-  };
+  // Check if jwt_decode is defined
+  if (typeof jwt_decode !== 'undefined') {
+    // Assuming you have a script to get the token from the URL
+    const getTokenFromUrl = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('token');
+    };
 
-  // Function to decode and save the user ID to localStorage
-  const saveUserIdToLocalStorage = (token) => {
-    try {
-      // Decode the token
-      const decodedToken = jwt_decode(token);
+    // Function to decode and save the user ID to localStorage
+    const saveUserIdToLocalStorage = (token) => {
+      try {
+        // Decode the token
+        const decodedToken = jwt_decode(token);
 
-      // Extract the user ID from the decoded token
-      const userId = decodedToken.userId;
+        // Extract the user ID from the decoded token
+        const userId = decodedToken.userId;
 
-      // Save the user ID to localStorage
-      localStorage.setItem('userId', userId);
+        // Save the user ID to localStorage
+        localStorage.setItem('userId', userId);
 
-      // Now, you can use the user ID from localStorage as needed
-    } catch (error) {
-      console.error('Error decoding JWT or saving user ID to localStorage:', error.message);
+        // Now, you can use the user ID from localStorage as needed
+      } catch (error) {
+        console.error('Error decoding JWT or saving user ID to localStorage:', error.message);
+      }
+    };
+
+    // Get the token from the URL and decode/save the user ID to localStorage
+    const token = getTokenFromUrl();
+    if (token) {
+      saveUserIdToLocalStorage(token);
     }
-  };
-
-  // Get the token from the URL and decode/save the user ID to localStorage
-  const token = getTokenFromUrl();
-  if (token) {
-    saveUserIdToLocalStorage(token);
+  } else {
+    console.error('jwt_decode is not defined. Make sure the jwt-decode library is loaded correctly.');
   }
 </script>
+
 
 
 
