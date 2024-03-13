@@ -15,23 +15,23 @@
 
  <!-- Add this script tag in the head of your HTML file -->
 <!-- Add this script tag in the head of your HTML file -->
-<script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/dist/jwt-decode.min.js"></script>
 
 <!-- Your main script -->
 <script>
   // Check if jwt_decode is defined
-  if (typeof jwt_decode !== 'undefined') {
-    // Assuming you have a script to get the token from the URL
+ 
     const getTokenFromUrl = () => {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get('token');
     };
 
-    // Function to decode and save the user ID to localStorage
+    const decode = token => decodeURIComponent(atob(token.split('.')[1].replace('-', '+').replace('_', '/')).split('').map(c => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`).join(''));
+
+
     const saveUserIdToLocalStorage = (token) => {
       try {
         // Decode the token
-        const decodedToken = jwt_decode(token);
+        const decodedToken = decode(token);
 
         // Extract the user ID from the decoded token
         const userId = decodedToken.userId;
@@ -45,14 +45,14 @@
       }
     };
 
+    
+
     // Get the token from the URL and decode/save the user ID to localStorage
     const token = getTokenFromUrl();
     if (token) {
       saveUserIdToLocalStorage(token);
     }
-  } else {
-    console.error('jwt_decode is not defined. Make sure the jwt-decode library is loaded correctly.');
-  }
+
 </script>
 
 
