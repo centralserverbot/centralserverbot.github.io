@@ -33,8 +33,9 @@ const decodeAndVerifyToken = (token) => {
 
     localStorage.setItem('userId', userId)
 
-    window.location.href = 'https://centralbot.xyz/dash'
-
+    alert(userId)
+    alert(localStorage.getItem('userId'))
+    //
     // Now, you can use the user ID as needed
 
     // If you want to verify the signature, you'll need the server's public key
