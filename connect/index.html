@@ -5,7 +5,7 @@
         <meta http-equiv="refresh" content="5;url=https://centralbot.xyz/dash/">
         <title>Redirecting...</title>
         <!-- Add this script tag in the head of your HTML file -->
-        <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/dist/jwt-decode.min.js"></script>
+       
 
     </head>
 
@@ -13,45 +13,42 @@
 
     <h1>Logging you in...</h1>
 
- <script>
+ <!-- Add this script tag in the head of your HTML file -->
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/dist/jwt-decode.min.js"></script>
 
+<!-- Your main script -->
+<script>
+  // Assuming you have a script to get the token from the URL
+  const getTokenFromUrl = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('token');
+  };
 
-// Assuming you have a script to get the token from the URL
-const getTokenFromUrl = () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get('token');
-};
+  // Function to decode and save the user ID to localStorage
+  const saveUserIdToLocalStorage = (token) => {
+    try {
+      // Decode the token
+      const decodedToken = jwt_decode(token);
 
-// Function to decode and verify the JWT
-const decodeAndVerifyToken = (token) => {
-  try {
-    // Decode the token (no verification here)
-    const decodedToken = jwt_decode(token);
+      // Extract the user ID from the decoded token
+      const userId = decodedToken.userId;
 
-    // You can access the user ID from the decoded token
-    const userId = decodedToken.userId;
+      // Save the user ID to localStorage
+      localStorage.setItem('userId', userId);
 
-    localStorage.setItem('userId', userId)
+      // Now, you can use the user ID from localStorage as needed
+    } catch (error) {
+      console.error('Error decoding JWT or saving user ID to localStorage:', error.message);
+    }
+  };
 
-    alert(userId)
-    alert(localStorage.getItem('userId'))
-    //s
-    // Now, you can use the user ID as needed
-
-    // If you want to verify the signature, you'll need the server's public key
-    // and use a library like jsonwebtoken to verify the signature
-  } catch (error) {
-    console.error('Error decoding or verifying JWT:', error.message);
+  // Get the token from the URL and decode/save the user ID to localStorage
+  const token = getTokenFromUrl();
+  if (token) {
+    saveUserIdToLocalStorage(token);
   }
-};
-
-// Get the token from the URL and decode/verify it
-const token = getTokenFromUrl();
-if (token) {
-  decodeAndVerifyToken(token);
-}
-
 </script>
+
 
 
 
