@@ -98,19 +98,15 @@
         .then(data => {
             console.log('Received URL:', data.url);
 
-            
-            document.getElementById('avurl').src = data.url
-            localStorage.setItem( 'avurl', data.url )
-
-            document.getElementById('username').innerText = data.username
+             localStorage.setItem( 'avurl', data.url )
+           
+            document.getElementById('username').innerText = `Central - ${data.username}'s Dashboard`
             localStorage.setItem('username', data.username)
         })
         .catch(error => console.error('Error fetching URL:', error.message));
       }else{
 
-         document.getElementById('avurl').src = localStorage.getItem('avurl')
-
-         document.getElementById('username').innerText = localStorage.getItem('username')
+         document.getElementById('username').innerText = `Central - ${USERNAME}'s Dashboard`
 
       }
 

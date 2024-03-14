@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="5;url=https://centralbot.xyz/dash/">
+        <meta http-equiv="refresh" content="0.5;url=https://centralbot.xyz/dash/">
         <title>Redirecting...</title>
         <!-- Add this script tag in the head of your HTML file -->
        
@@ -32,14 +32,11 @@
       try {
         // Decode the token
         const decodedToken = decode(token);
-
-        alert(decodedToken)
         //{"userId":"648314224174432267","iat":1710335908}
         // Extract the user ID from the decoded token
         const obj = JSON.parse(decodedToken);
 
 
-       
         // Save the user ID to localStorage
         localStorage.setItem('userId', obj.userId);
 
