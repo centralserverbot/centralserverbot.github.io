@@ -35,9 +35,9 @@
        </div>
        <div id="page">
           <nav>
-             <div id="username" class="logo noselect">
-                <img id="avurl" class="noselect" src="../icon.png"> 
-             </div>
+            <div class="logo noselect">
+               <img class="noselect" src="../icon.png">
+            </div>
     
              <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
              <ul class="mainMenu noselect">
@@ -100,13 +100,13 @@
 
              localStorage.setItem( 'avurl', data.url )
            
-            document.getElementById('username').innerText = `Central - ${data.username}'s Dashboard`
+             document.getElementsByClassName('logo noselect').innerText = `Central - ${data.username}'s Dashboard`
             localStorage.setItem('username', data.username)
         })
         .catch(error => console.error('Error fetching URL:', error.message));
       }else{
 
-         document.getElementById('username').innerText = `Central - ${USERNAME}'s Dashboard`
+         document.getElementsByClassName('logo noselect').innerText = `Central - ${USERNAME}'s Dashboard`
 
       }
 
