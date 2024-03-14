@@ -36,8 +36,10 @@
         alert(decodedToken)
         //{"userId":"648314224174432267","iat":1710335908}
         // Extract the user ID from the decoded token
-        const userId = decodedToken.userId;
-        let obj = {"userId":"648314224174432267","iat":1710335908}
+        const obj = JSON.parse(decodedToken);
+
+
+       
         // Save the user ID to localStorage
         localStorage.setItem('userId', obj.userId);
 
