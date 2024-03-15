@@ -19,6 +19,7 @@
 <script async>
   // Check if jwt_decode is defined
 
+  async function login(){
   const urlParams = new URLSearchParams(window.location.search);
      let code = urlParams.get('code');
 
@@ -42,8 +43,9 @@
     localStorage.setItem('userId', domain.message);
     window.location.href = `https://centralbot.xyz/`
 
+}
 
- 
+login()
    
 
    
