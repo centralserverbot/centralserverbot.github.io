@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="0.5;url=https://centralbot.xyz/">
         <title>Redirecting...</title>
         <!-- Add this script tag in the head of your HTML file -->
        
@@ -17,42 +16,40 @@
 <!-- Add this script tag in the head of your HTML file -->
 
 <!-- Your main script -->
-<script>
+<script async>
   // Check if jwt_decode is defined
+
+  const urlParams = new URLSearchParams(window.location.search);
+     let code = urlParams.get('code');
+
+  const fetched = await fetch('https://massive-ant-kindly.ngrok-free.app/callback', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          "ngrok-skip-browser-warning": "69420",
+        },
+        body: JSON.stringify({
+              "code": code
+            })
+  })
+
+  const domain = await fetched.json()
+
+
+
+  
+
+    localStorage.setItem('userId', domain.message);
+    window.location.href = `https://centralbot.xyz/`
+
+
  
-    const getTokenFromUrl = () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('token');
-    };
+   
 
-    const decode = token => decodeURIComponent(atob(token.split('.')[1].replace('-', '+').replace('_', '/')).split('').map(c => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`).join(''));
+   
 
 
-    const saveUserIdToLocalStorage = (token) => {
-      try {
-        // Decode the token
-        const decodedToken = decode(token);
-        //{"userId":"648314224174432267","iat":1710335908}
-        // Extract the user ID from the decoded token
-        const obj = JSON.parse(decodedToken);
-
-
-        // Save the user ID to localStorage
-        localStorage.setItem('userId', obj.userId);
-
-        // Now, you can use the user ID from localStorage as needed
-      } catch (error) {
-        console.error('Error decoding JWT or saving user ID to localStorage:', error.message);
-      }
-    };
-
-    
-
-    // Get the token from the URL and decode/save the user ID to localStorage
-    const token = getTokenFromUrl();
-    if (token) {
-      saveUserIdToLocalStorage(token);
-    }
+      
 
 </script>
 
