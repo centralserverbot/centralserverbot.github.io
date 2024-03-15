@@ -1,136 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Form</title>
-    <link rel="stylesheet" href="../index.css">
-    <style>
+   <meta charset="utf-8">
+   <title>Central - Discord Bot</title>
+
+   <meta content="Central" property="og:title" />
+   <meta content="Your all-in-one solution for ER:LC Private Server Management, offering an innovative staff BOLO system, session management tools, an infraction system, a moderation system, and an economy system!" property="og:description" />
+   <meta content="https://centralbot.xyz" property="og:url" />
+   <meta content="https://media.discordapp.net/attachments/1196940248177983720/1198058713337053287/discotools-xyz-icon_17.png?ex=65cffb20&is=65bd8620&hm=75d51b3b7bd4b7963b3ff3f29f03e34b604d8c85ceb7f0b23189551aa6d94de5&=&format=webp&quality=lossless" property="og:image" />
+   <meta content="#88d7ff" data-react-helmet="true" name="theme-color" />   
 
 
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #444;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
+   <link rel="stylesheet" href="../index.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #fff
-        }
+   <link rel="icon" href="iconblue.png">
+   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet">
 
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-            border: 1px solid #555;
-            border-radius: 4px;
-            background-color: #666;
-            color: #fff;
-        }
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+   <style>
+        
+        
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #fff
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #555;
+        border-radius: 4px;
+        background-color: #666;
+        color: #fff;
+    }
 
 
-        input[type="file"] {
-            background-color: #666;
-        }
+    input[type="file"] {
+        background-color: #666;
+    }
 
-        input[type="submit"] {
-            background-color: #88d7ff;
-            color: #444;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    input[type="submit"] {
+        background-color: #88d7ff;
+        color: #444;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-        input[type="submit"]:hover {
-            background-color: rgba(136, 215, 255,0.7);
-        }
-    </style>
+    input[type="submit"]:hover {
+        background-color: rgba(136, 215, 255,0.7);
+    }
+</style>
 </head>
-<body>
-<br>
-<form id="inputForm" enctype="multipart/form-data">
-    <label for="user">Your Discord ID: *</label>
-    <input type="number" id="submiter" name="submiter" required>
 
-    <label for="user">User to be BOLOed's Discord ID: *</label>
-    <input type="number" id="user" name="user" required>
+<body onload="loaderFunction()">
 
-    <label for="reasoning">Reasoning: *</label>
-    <textarea id="reasoning" name="reasoning" rows="4" required></textarea>
+   <div id="loader">
+      <div class="loading">
+         <span></span>
+      </div>
+   </div>
+   <div id="page">
+      <nav>
+         <div class="logo noselect">
+            <img class="noselect" src="../icon.png"> Central - BOLO Creation
+         </div>
 
-    <label for="proof">Proof: (image URL) *</label>
-    <input type="url" id="proof" name="proof" required pattern="https?://.+">
+         <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
+         <ul class="mainMenu noselect">
+            <li><a href="https://centralbot.xyz/"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="../commands"><i class="far fa-list-alt"></i> Commands</a></li>
+            <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
+            <li><a href="https://discord.gg/VQVCbj284G" target="_none"><i class="fas fa-headset"></i> Support</a></li>
+            <li><a class="active" href="#"><i class="fas fa-envelope"></i> BOLO</a></li>
+            <div class="closeMenu noselect"><i class="fa fa-times"></i></div>
+         </ul>
+      </nav>
 
-    <label for="proof2">Proof2: (image URL)</label>
-    <input type="url" id="proof2" name="proof2" pattern="https?://.+">
+      <div class="content noselect">
+        <br>
+        <form id="inputForm" enctype="multipart/form-data">
+            <label for="user">User to be BOLOed's Discord ID: *</label>
+            <input type="number" id="user" name="user" required>
+        
+            <label for="reasoning">Reasoning: *</label>
+            <textarea id="reasoning" name="reasoning" rows="4" required></textarea>
+        
+            <label for="proof">Proof: (image URL) *</label>
+            <input type="url" id="proof" name="proof" required pattern="https?://.+">
+        
+            <label for="proof2">Proof2: (image URL)</label>
+            <input type="url" id="proof2" name="proof2" pattern="https?://.+">
+        
+            <label for="proof3">Proof3: (image URL)</label>
+            <input type="url" id="proof3" name="proof3" pattern="https?://.+">
+        
+            <label for="proof4">Proof4: (image URL)</label>
+            <input type="url" id="proof4" name="proof4" pattern="https?://.+">
+        
+            <label for="proof5">Proof5: (image URL)</label>
+            <input type="url" id="proof5" name="proof5" pattern="https?://.+">
+        
+            <input type="submit" value="Submit">
+        </form>
+        
+        <script>
+            const ID = localStorage.getItem('userId')    
 
-    <label for="proof3">Proof3: (image URL)</label>
-    <input type="url" id="proof3" name="proof3" pattern="https?://.+">
-
-    <label for="proof4">Proof4: (image URL)</label>
-    <input type="url" id="proof4" name="proof4" pattern="https?://.+">
-
-    <label for="proof5">Proof5: (image URL)</label>
-    <input type="url" id="proof5" name="proof5" pattern="https?://.+">
-
-    <input type="submit" value="Submit">
-</form>
-
-<script>
-    document.getElementById('inputForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Gather form data
-        const formData = new FormData(event.target);
-
-        // Convert form data to a plain JavaScript object
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
-
-        // Send data to your API
-        const apiUrl = 'https://central-lively-eagle.ngrok-free.app/boloCreate'; // Replace with your API endpoint
-        fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(responseData => {
-            console.log('Data sent successfully:', responseData);
-            // Optionally, you can add logic to handle the response from the API
-            let success = 'Submitted for approval!'
-
-            if(responseData.success === false){
-                success = responseData.message
-            }
-
-            alert(success);
-
-            // Redirect to a different link after the alert is closed
-            window.location.href = 'https://centralbot.xyz/'; // Replace with your redirect link
-        })
-        .catch(error => {
-            console.error('Error sending data to the API:', error);
-        });
-    });
-</script>
+            if(!ID){
+                 window.location.href = 'https://centralbot.xyz/login'
+              }
 
 
+
+
+            document.getElementById('inputForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+        
+                // Gather form data
+                const formData = new FormData(event.target);
+        
+                // Convert form data to a plain JavaScript object
+                const data = {};
+
+                data.submiter = ID
+
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+        
+                // Send data to your API
+                const apiUrl = 'https://central-lively-eagle.ngrok-free.app/boloCreate'; // Replace with your API endpoint
+                fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(responseData => {
+                    console.log('Data sent successfully:', responseData);
+                    // Optionally, you can add logic to handle the response from the API
+                    let success = 'Submitted for approval!'
+        
+                    if(responseData.success === false){
+                        success = responseData.message
+                    }
+        
+                    alert(success);
+        
+                    // Redirect to a different link after the alert is closed
+                    window.location.href = 'https://centralbot.xyz/'; // Replace with your redirect link
+                })
+                .catch(error => {
+                    console.error('Error sending data to the API:', error);
+                });
+            });
+        </script>
+    
+        
+            <script src="../index.js"></script>
+         </div>
 </body>
+
 </html>
