@@ -24,7 +24,7 @@
      let code = urlParams.get('code');
 
   const fetched = await fetch('https://massive-ant-kindly.ngrok-free.app/callback', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           "ngrok-skip-browser-warning": "69420",
