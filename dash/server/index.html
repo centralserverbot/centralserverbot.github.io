@@ -118,13 +118,16 @@
 
        async function server(){  
         
-      const guild = await  fetch('https://massive-ant-kindly.ngrok-free.app/server', {
+      const guildfetch = await  fetch('https://massive-ant-kindly.ngrok-free.app/server', {
                method: 'POST',
                headers: {
                   'Content-Type': 'application/json',
                  },
                body: JSON.stringify({ ID, serverid }), // Send user ID in the request body
-            }).json()
+            })
+
+
+    const guild = await guildfetch.json()
 
             if(guild.failed){
                 alert(guild.message)
