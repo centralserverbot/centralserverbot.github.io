@@ -24,10 +24,28 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
 
     <style>
+      .card {
+         display: flex;
+         align-items: center; /* Center items vertically */
+         margin-bottom: 20px; /* Add some margin between cards */
+      }
+
+      .card-content {
+         display: flex;
+         align-items: center; /* Center items vertically */
+      }
+
       .card-image {
-    max-width: 100%; /* Adjust this value as needed */
-    height: auto; /* Maintain aspect ratio */
-}
+         width: 100px; /* Set width to 100px */
+         height: 100px; /* Set height to 100px */
+         border-radius: 5px; /* Add some border radius for rounded corners */
+         margin-right: 20px; /* Add some space between image and text */
+      }
+
+      .text-container {
+         flex: 1; /* Allow text container to expand and fill remaining space */
+      }
+
     </style>
  </head>
 <body>
