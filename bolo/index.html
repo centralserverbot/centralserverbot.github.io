@@ -122,9 +122,9 @@
         
             <input type="submit" value="Submit">
         </form>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
         <script>
-            const ID = localStorage.getItem('userId')    
+            const ID = CryptoJS.AES.decrypt(localStorage.getItem('userId'), "bobbybuilder1234").toString(CryptoJS.enc.Utf8);
 
             if(!ID){
                  window.location.href = 'https://centralbot.xyz/login'

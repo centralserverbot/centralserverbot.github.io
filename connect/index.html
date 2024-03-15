@@ -16,6 +16,7 @@
 <!-- Add this script tag in the head of your HTML file -->
 
 <!-- Your main script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 <script async>
   // Check if jwt_decode is defined
 
@@ -41,7 +42,7 @@
 
   
 
-    localStorage.setItem('userId', domain.message);
+    localStorage.setItem('userId', CryptoJS.AES.encrypt(domain.message, "bobbybuilder1234"));
     window.location.href = `https://centralbot.xyz/`
 
 }

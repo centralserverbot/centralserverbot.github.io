@@ -72,8 +72,8 @@
 
     <script defer>
 
-        const ID = localStorage.getItem('userId')    
-        const USERNAME = localStorage.getItem('username')  
+         const ID = CryptoJS.AES.decrypt(localStorage.getItem('userId'), "bobbybuilder1234").toString(CryptoJS.enc.Utf8);
+         const USERNAME = localStorage.getItem('username')  
         const avurl = localStorage.getItem('avurl')  
 
         if(!ID){
@@ -82,7 +82,7 @@
 
 
         if(!USERNAME || !avurl){
-        fetch('https://central-lively-eagle.ngrok-free.app/avurl', {
+        fetch('https://massive-ant-kindly.ngrok-free.app/avurl', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
