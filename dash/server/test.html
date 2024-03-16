@@ -74,9 +74,9 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
             gap: 20px; /* Spacing between columns */
+
             max-height: calc(100vh - 100px); /* Adjust the value as needed based on your navbar height */
           overflow-y: auto; /* Enable vertical scrolling if needed */
-          
         }
         .card {
             display: inline-block;
@@ -184,25 +184,25 @@
           </nav>
     
           <div class="content noselect">
-            <div class="heading text-center">
-              <br>
-              <div id="serverStuffContainer">
-               <div class="column">
-                   <form id="inputForm" enctype="multipart/form-data">
-                   
-                       <label for="command">ER:LC Private Server Command Runner:</label>
-                       <textarea id="command" name="command" rows="4" required></textarea>
-                   
-                       <input type="submit" value="Send Command">
-                   </form>
-               </div>
-
-               <div class="column">
-
+             <div class="heading text-center">
+               <br>
+               <div id="serverStuffContainer">
+                <div class="column">
+                    <form id="inputForm" enctype="multipart/form-data">
+                    
+                        <label for="command">ER:LC Private Server Command Runner:</label>
+                        <textarea id="command" name="command" rows="4" required></textarea>
+                    
+                        <input type="submit" value="Send Command">
+                    </form>
                 </div>
-               </div>
-            </div>
-         </div>
+
+                <div class="column">
+
+                 </div>
+                </div>
+             </div>
+          </div>
 
           <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
         <script src="https://centralbot.xyz/index.js"></script>
@@ -212,50 +212,19 @@
 
     <script defer>
 
-         const userId = localStorage.getItem('userId')
-         const USERNAME = localStorage.getItem('username')  
-        const avurl = localStorage.getItem('avurl')  
-
-        if(!userId){
-            window.location.href = 'https://centralbot.xyz/login'
-        }
-
-       const ID = CryptoJS.AES.decrypt(localStorage.getItem('userId'), "bobbybuilder1234").toString(CryptoJS.enc.Utf8);
-
-       const urlParams = new URLSearchParams(window.location.search);
-     let serverid = urlParams.get('id');
-
-       async function server(){  
-        
-      const guildfetch = await  fetch('https://massive-ant-kindly.ngrok-free.app/server', {
-               method: 'POST',
-               headers: {
-                  'Content-Type': 'application/json',
-                 },
-               body: JSON.stringify({ ID, serverid }), // Send user ID in the request body
-            })
-
-
-    const guild = await guildfetch.json()
-
-            if(guild.failed){
-                alert(guild.message)
-               return window.location.href = 'https://centralbot.xyz/dash'
-            }
-
-            document.getElementById('username').innerText = `${guild.name} Dashboard`
-
-
-    }
-
-    server()
+            
+         Swal.fire({
+         title: "Good job!",
+         text: "You clicked the button!",
+         icon: "success"
+         });
+   
             
 
     </script>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <script>
@@ -308,9 +277,6 @@
        });
    });
 </script>
-
-
-
 
 
 

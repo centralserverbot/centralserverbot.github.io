@@ -123,7 +123,10 @@
             <input type="submit" value="Submit for approval">
         </form>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-        <script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      
+      
+      <script>
          const userId = localStorage.getItem('userId')
         
         if(!userId){
@@ -170,12 +173,17 @@
                     console.log('Data sent successfully:', responseData);
                     // Optionally, you can add logic to handle the response from the API
                     let success = 'Submitted for approval!'
-        
+                    let icon = "success"
+
                     if(responseData.success === false){
                         success = responseData.message
+                        icon = 'error'
                     }
-        
-                    alert(success);
+
+                    Swal.fire({
+                        text: success,
+                        icon: icon
+                    })
         
                     // Redirect to a different link after the alert is closed
                     window.location.href = 'https://centralbot.xyz/'; // Replace with your redirect link
