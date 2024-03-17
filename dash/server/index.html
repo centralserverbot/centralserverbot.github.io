@@ -74,10 +74,14 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
             gap: 20px; /* Spacing between columns */
+
+        }
+
+        .content  {
             max-height: calc(100vh - 100px); /* Adjust the value as needed based on your navbar height */
           overflow-y: auto; /* Enable vertical scrolling if needed */
-          
         }
+
         .card {
             display: inline-block;
             margin: 10px;
@@ -111,13 +115,24 @@
         }
 
     form {
-        max-width: 1200px;
+        max-width: 1500px;
         margin: 0 auto;
-        background-color: #444;
+
         padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+
+
     }
+
+    #inputForm {
+        text-align: left; /* Align text to the left */
+    }
+
+    #inputForm h1 {
+        margin-left: 0; /* Reset margin */
+        display: inline-block; /* Make it inline-block to align with the input */
+        vertical-align: middle; /* Align vertically in the middle */
+    }
+
 
     label {
         display: block;
@@ -145,9 +160,15 @@
         background-color: #88d7ff;
         color: #444;
         padding: 10px 15px;
+        float: right;
+        width: 10%;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+    }
+
+    ::placeholder{
+        color: #ffffffaa
     }
 
     input[type="submit"]:hover {
@@ -186,24 +207,72 @@
           <div class="content noselect">
             <div class="heading text-center">
               <br>
+
+              <form id="inputForm" enctype="multipart/form-data">
+                <h1>ER:LC Private Server Command Runner</h1>
+                <textarea id="command" name="command" rows="4" required placeholder="Begin typing here..."></textarea>
+            
+                <input type="submit" value="Send Command">
+            </form>
+            <BR>
+            <br>
               <div id="serverStuffContainer">
 
 
-                <form id="inputForm" enctype="multipart/form-data">
-                   
-                    <label for="command">ER:LC Private Server Command Runner:</label>
-                    <textarea id="command" name="command" rows="4" required></textarea>
-                
-                    <input type="submit" value="Send Command">
-                </form>
-
 
                <div class="column">
-                   
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+
                </div>
 
                <div class="column">
-
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
+                <h1>Hi</h1>
                 </div>
                </div>
             </div>
@@ -216,7 +285,7 @@
 
 
     <script defer>
-
+/*
          const userId = localStorage.getItem('userId')
          const USERNAME = localStorage.getItem('username')  
         const avurl = localStorage.getItem('avurl')  
@@ -256,7 +325,7 @@
     server()
 
 
-
+*/
 
     document.getElementById('inputForm').addEventListener('submit', function(event) {
        event.preventDefault(); // Prevent the default form submission
