@@ -223,7 +223,7 @@
        const ID = CryptoJS.AES.decrypt(localStorage.getItem('userId'), "bobbybuilder1234").toString(CryptoJS.enc.Utf8);
 
        const urlParams = new URLSearchParams(window.location.search);
-     let serverid = urlParams.get('id');
+        let serverid = urlParams.get('id');
 
        async function server(){  
         
@@ -249,27 +249,27 @@
     }
 
     server()
-            
-
-    </script>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-<script>
-   document.getElementById('inputForm').addEventListener('submit', function(event) {
+    document.getElementById('inputForm').addEventListener('submit', function(event) {
        event.preventDefault(); // Prevent the default form submission
 
        // Gather form data
        const formData = new FormData(event.target);
 
+
+       const text = formData.get('command');
        // Convert form data to a plain JavaScript object
-       const data = {};
-       formData.forEach((value, key) => {
-           data[key] = value;
-       });
+       const data = {
+        serverid: serverid,
+        userid: userId,
+        text: text
+       };
+
+
+
 
        // Send data to your API
        const apiUrl = 'https://massive-ant-kindly.ngrok-free.app/erlcAPIreq'; // Replace with your API endpoint
@@ -289,10 +289,10 @@
        .then(responseData => {
            console.log('Data sent successfully:', responseData);
            // Optionally, you can add logic to handle the response from the API
-           let success = 'Submitted for approval!'
+           let success = 'Successfuly sent command!'
            let icon = "success"
 
-           if(responseData.success === false){
+           if(responseData.stats === false){
                success = responseData.message
                icon = 'error'
            }
@@ -307,11 +307,9 @@
            console.error('Error sending data to the API:', error);
        });
    });
-</script>
+            
 
-
-
-
+    </script>
 
 
 
