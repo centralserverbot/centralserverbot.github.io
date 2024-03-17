@@ -284,6 +284,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+
     <script defer>
 
          const userId = localStorage.getItem('userId')
@@ -335,15 +336,15 @@
 
        const text = formData.get('command');
        // Convert form data to a plain JavaScript object
+
        const data = {
         serverid: serverid,
         userid: ID,
         text: text
        };
 
-
        Swal.fire({
-        iconHtml: '<img src="https://media.tenor.com/_62bXB8gnzoAAAAj/loading.gif">',
+        iconHtml: '<img width="70px" src="https://media.tenor.com/_62bXB8gnzoAAAAj/loading.gif">',
         title: "Loading...",
         showConfirmButton: false
        })
