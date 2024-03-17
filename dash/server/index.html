@@ -110,8 +110,8 @@
             text-align: center;
         }
 
-        form {
-        max-width: 600px;
+    form {
+        max-width: 1200px;
         margin: 0 auto;
         background-color: #444;
         padding: 20px;
@@ -187,14 +187,19 @@
             <div class="heading text-center">
               <br>
               <div id="serverStuffContainer">
+
+
+                <form id="inputForm" enctype="multipart/form-data">
+                   
+                    <label for="command">ER:LC Private Server Command Runner:</label>
+                    <textarea id="command" name="command" rows="4" required></textarea>
+                
+                    <input type="submit" value="Send Command">
+                </form>
+
+
                <div class="column">
-                   <form id="inputForm" enctype="multipart/form-data">
                    
-                       <label for="command">ER:LC Private Server Command Runner:</label>
-                       <textarea id="command" name="command" rows="4" required></textarea>
-                   
-                       <input type="submit" value="Send Command">
-                   </form>
                </div>
 
                <div class="column">
