@@ -292,7 +292,7 @@
            let success = 'Successfuly sent command!'
            let icon = "success"
 
-           if(responseData.stats === false){
+           if(!responseData.stats){
                success = responseData.message
                icon = 'error'
            }
