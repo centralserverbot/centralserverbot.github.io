@@ -133,8 +133,7 @@
             window.location.href = 'https://centralbot.xyz/login'
         }
 
-       const ID = CryptoJS.AES.decrypt(localStorage.getItem('userId'), "bobbybuilder1234").toString(CryptoJS.enc.Utf8);
-
+       
 
 
 
@@ -148,7 +147,7 @@
                 // Convert form data to a plain JavaScript object
                 const data = {};
 
-                data.submiter = ID
+                data.submiter = userId
 
                 formData.forEach((value, key) => {
                     data[key] = value;

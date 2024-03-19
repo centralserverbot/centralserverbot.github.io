@@ -114,20 +114,31 @@
             text-align: center;
         }
 
-    form {
+
+
+
+    .inputForm {
+        text-align: left; /* Align text to the left */
         max-width: 1500px;
         margin: 0 auto;
-
         padding: 20px;
-
-
     }
 
-    #inputForm {
+    .inputForm h1 {
+        margin-left: 0; /* Reset margin */
+        display: inline-block; /* Make it inline-block to align with the input */
+        vertical-align: middle; /* Align vertically in the middle */
+    }
+
+    .inputForm2 {
         text-align: left; /* Align text to the left */
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px;
+        
     }
 
-    #inputForm h1 {
+    .inputForm2 h3 {
         margin-left: 0; /* Reset margin */
         display: inline-block; /* Make it inline-block to align with the input */
         vertical-align: middle; /* Align vertically in the middle */
@@ -156,7 +167,7 @@
         background-color: #666;
     }
 
-    input[type="submit"] {
+    .inputForm input[type="submit"] {
         background-color: #88d7ff;
         color: #444;
         padding: 10px 15px;
@@ -166,6 +177,19 @@
         border-radius: 4px;
         cursor: pointer;
     }
+
+    .inputForm2 input[type="submit"] {
+        background-color: #88d7ff;
+        color: #444;
+        padding: 10px 15px;
+        float: right;
+        width: 25%;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    
 
     ::placeholder{
         color: #ffffffaa
@@ -208,7 +232,7 @@
             <div class="heading text-center">
               <br>
 
-              <form id="inputForm" enctype="multipart/form-data">
+              <form class="inputForm" id="customcmd" enctype="multipart/form-data">
                 <h1>ER:LC Private Server Command Runner</h1>
                 <textarea id="command" name="command" rows="4" required placeholder="Begin typing here..."></textarea>
             
@@ -217,62 +241,45 @@
             <BR>
             <br>
               <div id="serverStuffContainer">
-
-
-
                <div class="column">
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
+                <form class="inputForm2" id="bancmd" enctype="multipart/form-data">
+                    <h3>Ban User (Private Server)</h3>
+                    <textarea id="command" name="command" rows="2" required placeholder="Type a username..."></textarea>
+                
+                    <input type="submit" value="Send Command">
+                </form>
+<br>
+<br>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+
 
                </div>
 
                <div class="column">
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
-                <h1>Hi</h1>
+                <form class="inputForm2" id="kickcmd" enctype="multipart/form-data">
+                    <h3>Kick User (Private Server)</h3>
+                    <textarea id="command" name="command" rows="2" required placeholder="Type a username..."></textarea>
+                
+                    <input type="submit" value="Send Command">
+                </form>
+<br>
+<br>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+
                 </div>
                </div>
             </div>
@@ -286,7 +293,7 @@
 
 
     <script defer>
-
+/*
          const userId = localStorage.getItem('userId')
          const USERNAME = localStorage.getItem('username')  
         const avurl = localStorage.getItem('avurl')  
@@ -325,9 +332,9 @@
 
     server()
 
+*/
 
-
-    document.getElementById('inputForm').addEventListener('submit', function(event) {
+    document.getElementById('customcmd').addEventListener('submit', function(event) {
        event.preventDefault(); // Prevent the default form submission
 
        // Gather form data
