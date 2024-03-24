@@ -305,6 +305,10 @@
       const urlParams = new URLSearchParams(window.location.search);
         let serverid = urlParams.get('id');
 
+        if(!serverid){
+            window.location.href = 'https://centralbot.xyz/dash'
+        }
+
        async function server(){  
         
       const guildfetch = await  fetch('https://massive-ant-kindly.ngrok-free.app/server', {
