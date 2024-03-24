@@ -109,15 +109,15 @@
 
     <script defer>
 
-         const userId = localStorage.getItem('userId')
+         const ID = localStorage.getItem('userId')
          const USERNAME = localStorage.getItem('username')  
         const avurl = localStorage.getItem('avurl')  
 
-        if(!userId){
+        if(!ID){
             window.location.href = 'https://centralbot.xyz/login'
         }
 
-       const ID = CryptoJS.AES.decrypt(localStorage.getItem('userId'), "bobbybuilder1234").toString(CryptoJS.enc.Utf8);
+       
 
 
 
