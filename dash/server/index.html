@@ -293,8 +293,8 @@
 
 
     <script defer>
-/*
-         const userId = localStorage.getItem('userId')
+
+         const ID = localStorage.getItem('userId')
          const USERNAME = localStorage.getItem('username')  
         const avurl = localStorage.getItem('avurl')  
 
@@ -302,9 +302,7 @@
             window.location.href = 'https://centralbot.xyz/login'
         }
 
-       const ID = CryptoJS.AES.decrypt(localStorage.getItem('userId'), "bobbybuilder1234").toString(CryptoJS.enc.Utf8);
-
-       const urlParams = new URLSearchParams(window.location.search);
+      const urlParams = new URLSearchParams(window.location.search);
         let serverid = urlParams.get('id');
 
        async function server(){  
@@ -332,7 +330,7 @@
 
     server()
 
-*/
+
 
     document.getElementById('customcmd').addEventListener('submit', function(event) {
        event.preventDefault(); // Prevent the default form submission
