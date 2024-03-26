@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+                    Swal.fire({
+                        title: 'Website BOLOs deleted',
+                        text: 'Website BOLOs have been deleted. Please use /bolo create in a server you have HR in!',
+                        footer: 'This page will be deleted on April 25th',
+                        icon: 'error',
+                        confirmButtonColor: "#88d7ff",
+                        confirmButtonText: 'Ok'
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'https://centralbot.xyz/'
+                        }
+                    });    
+</script>
+</body>
+</html>
