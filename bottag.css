@@ -2,6 +2,6 @@
     --rs-version: "2.0.9";
   }
 
-  .botText_daff56 {
+  #app-mount  .botText_daff56 {
     content: "BOT" !important;
 }
