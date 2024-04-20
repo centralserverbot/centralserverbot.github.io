@@ -1,11 +1,7 @@
 .botTagRegular_fc4b4a .botText_daff56 {
-    /* Hide the original text */
     display: none;
 }
 
 .botTagRegular_fc4b4a::after {
     content: "BOT";
-    color: #ffffff; /* Example color */
-    background-color: #5663ed; /* Example background color */
-    border-radius: 3px; /* Example border radius */
 }
