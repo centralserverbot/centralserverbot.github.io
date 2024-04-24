@@ -1,7 +1,13 @@
-.botTagRegular_fc4b4a .botText_daff56 {
-    display: none;
+.botText_daff56 {    
+    font-size: 10px;
+    visibility: hidden;
+    position: relative;
+    
 }
 
-.botTagRegular_fc4b4a::after {
-    content: "BOT";
+
+.botText_daff56::before { 
+    content: 'BOT';
+    visibility: visible;
+    position: absolute;
 }
