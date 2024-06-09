@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog</title>
+  <link rel="icon" href="../iconblue.png">
+  <link rel="stylesheet" href="changelog.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body onload="loaderFunction()">
+
+  <div id="loader">
+    <div class="loading">
+      <span></span>
+    </div>
+  </div>
+
+
+  <div id="page">
+    <nav>
+      <div class="logo noselect">
+        <img class="noselect" src="../icon.png"> Central
+      </div>
+
+      <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
+      <ul class="mainMenu noselect">
+        <li><a href="../"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="../commands/"><i class="far fa-list-alt"></i> Commands</a></li>
+        <li><a class="active" target="_none"><i class="fas fa-scroll"></i> Changelog</a></li>
+        <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
+        <li><a href="https://discord.gg/VQVCbj284G" target="_none"><i class="fas fa-headset"></i> Support</a></li>
+        <li><a class="invite noselect" href="https://discord.com/api/oauth2/authorize?client_id=1173444104684847116&permissions=8&scope=bot" target="_none"><i
+              class="fab fa-discord"></i> Add to server</a></li>
+        <div class="closeMenu noselect"><i class="fa fa-times"></i></div>
+      </ul>
+    </nav>
+
+
+
+    <div class="container clear noselect">
+     <div class="row wrapper">
+
+        <span class="collapse" onclick="closeSidePanel()"><i class="fas fa-caret-left"></i></span>
+        <span class="expand" onclick="openSidePanel()"><i class="fas fa-caret-right"></i></span>
+
+
+
+        <div class="right-col">
+
+          <h1 style="font-size: 50px">
+            Central Changelog
+          </h1>
+          <p>
+            Showing previous updates, with most recent at the top!
+          </p>
+
+   
+
+          <section id = "1.8.5">
+            <h2>Version 1.8.5 (Minor)</h2>
+            <p>
+              <ul>
+                <li>Addition of Website changelog dating back to 1.7.0 ~ Check Discord for further versions!</li>
+                <li>Additional Bug Fixes.</li>
+
+              </ul>
+            </p>
+          </section>
+        
+          <section id = "1.8.4">
+            <h2>Version 1.8.4 (Minor)</h2>
+            <p>
+              <ul>
+                <li>Fixed a rolled back file issue in 1.8.3 causing custom welcome messages to not render correctly.</li>
+                <li>Added <span class="codeBlock">{user}</span> tag to custom welcome messages.</li>
+              </ul>
+            </p>
+          </section>
+        
+          <section id = "1.8.3">
+            <h2>Version 1.8.3 (Minor)</h2>
+            <p>
+              <ul></ul>
+              Updates:
+              <ul>
+                <li>Updated <span class="codeBlock">/help</span> with new commands from <span class="codeBlock">1.8.0</span></li>
+                <li>Refreshed website logos, left background the same, as an homage to the old logo.</li>
+              </ul>
+              Bug Fixes:
+              <ul>
+                <li>Fixed <span class="codeBlock">-whois</span> command so that instead of showing your profile when no user was found, it now just says no user was found.</li>
+                <li>Added failsafes to <span class="codeBlock">-purge</span> command spam.</li>
+              </ul>
+            </p>
+          </section>
+
+          <section id = "1.8.2">
+            <h2>Version 1.8.2 (Minor)</h2>
+            <p>
+              <ul>
+                <li>Due to some misconceptions about the "Linking" channels configurations, the text around them have been changed to "Mention channels"</li>
+                <li>This insinuates that instead of <i>sending a link to a channel</i> (Not what you were supposed to do), you send a <i>mention to a channel</i>. Ex: #channel-name</li>
+              </ul>
+            </p>
+          </section>
+
+          <section id = "1.8.1">
+            <h2>Version 1.8.1 (Minor)</h2>
+            <p>
+              <ul>
+                <li>Fixed an await error showing everyone having premium in the <span class="codeBlock">whois</span> & <span class="codeBlock">-w</span> commands</li>
+                <li>Fixed a similar await error showing that no one has premium in the <span class="codeBlock">-profile</span> command.</li>
+                <br>
+                <li>Note: This was a "graphical" glitch, and had no effect on the actual premium databases.</li>
+              </ul>
+            </p>
+          </section>
+
+          <section id = "1.8.0">
+            <h2>Version 1.8.0 (Major)</h2>
+            <p>
+              <ul></ul>
+              🔔  ⠀New Additions
+              <ul>
+                <li>Added premium!</li>
+                <li>Added <span class="codeBlock">/infraction edit {user} {infraction id}</span> (Suggested by: teamsghtnth6)</li>
+                <li>Added <span class="codeBlock">/request {online, moderation, administration, custom}</span> - Staff Request (Configuration needed!)</li>
+                <li>Added <span class="codeBlock">-purge {number}</span> (Manage Messages permission needed!)</li>
+                <li>Added ability to change the bots prefix (Configuration needed!) (Suggested by: saadalhajraf)</li>
+              </ul>
+              💎  ⠀Premium Additions
+              <ul>
+                <li>Customization over welcome message (Configuration needed!)</li>
+                <li>Customization over infractions embed (Configuration needed!)</li>
+                <li>Custom <span class="codeBlock">/request</span> types (Configuration needed!)</li>
+                <li>Additional support server abilities</li>
+                <ul>
+                  <li>Get started with <span class="codeBlock">/premium!</span></li>
+                </ul>
+              </ul>
+              ⭐ ⠀ Changes
+              <ul>
+                <li>Added <i>official</i> beta testing. Hand selected at the moment.</li>
+                <li>Gave Central a new look, enjoy the new logo!</li>
+              </ul>
+            </p>
+          </section>
+
+          <section id = "1.7.1">
+            <h2>Version 1.7.1 (Minor)</h2>
+            <p>
+              <ul></ul>
+              In preparation for the big update coming soon™️, we have corrected some bugs that have become apparent:
+              <ul>
+                <li>Session vote not pinging <span class="codeBlock">@here</span> even if the configuration was set to <span class="codeBlock">"yes"</span></li>
+                <li>Bot restarting unexpectedly with slash command usage</li>
+                <li>Bot crashing when help command was run (caused by a deleted emoji :/ )</li>
+                <li>And more, unimportant fixes.</li>
+              </ul>
+            </p>
+          </section>
+
+          <section id = "1.7.0">
+            <h2>Version 1.7.0 (Major)</h2>
+            <p>
+              <ul>
+                <li>Added Custom Embeds! 🎉</li>
+                <li>Can be configured in <span class="codeBlock">/config</span></li>
+                <br>
+                <li>Added Suggestions 🎉</li>
+                <li>Must be configured in <span class="codeBlock">/config</span></li>
+                <br>
+                <li>Enhanced infraction and promotion embeds</li>
+                <li>Added reaction logs to action log system</li>
+                <li>And major bug fixes!</li>
+              </ul>
+            </p>
+          </section>
+
+          <!--
+          <section id = "1.x.x">
+            <h2>Version 1.x.x</h2>
+            <p>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </p>
+          </section>
+          -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function scrollToSection(sectionId) {
+      var element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script src="../index.js"></script>
+  <script src="./changelog.js"></script>
+</body>
+
+</html>
