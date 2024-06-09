@@ -417,20 +417,20 @@ a {
 
 .noselect {
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 .noselect {
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
     -webkit-user-drag: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 
