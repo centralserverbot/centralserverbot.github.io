@@ -25,9 +25,9 @@
             <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
             <ul class="mainMenu noselect">
                <li><a href="../"><i class="fas fa-home"></i> Home</a></li>
+               <li><a class="active" href="#"><i class="fas fa-quote-left"></i> About</a></li>
                <li><a href="../commands"><i class="far fa-list-alt"></i> Commands</a></li>
                <li><a href="../changelog/"><i class="fas fa-scroll"></i> Changelog</a></li>
-               <li><a class="active" href="#"><i class="fas fa-quote-left"></i> About</a></li>
                <li><a href="https://discord.gg/VQVCbj284G" target="_none"><i class="fas fa-headset"></i> Support</a></li>
                <li><a class="invite noselect" href="https://discord.com/api/oauth2/authorize?client_id=1173444104684847116&permissions=8&scope=bot" target="_none"><i class="fab fa-discord"></i> Add to server</a></li>
                <div class="closeMenu noselect"><i class="fa fa-times"></i></div>
@@ -35,12 +35,109 @@
          </nav>
          <div class="content">
             <div class="title">About Central</div>
-            <div class="subtitle">Central Server is the brand-new, all-in-one ER:LC private server management tool. It offers an innovative staff BOLO system, session management tools, an infraction system, a moderation system, and an economy system!</div>
-           
-            <br>
-             <a href="https://discord.gg/VQVCbj284G" class="btn btn-primary">Learn More</a>
+            <div class="about-content">
+               <p class="intro">
+                  Welcome to <strong>Central</strong>, your premier ER:LC private server management tool. 
+                  <span class="established">Established in January 2024</span>, Central has rapidly expanded, managing over 
+                  <strong>1,000 servers</strong> within the first four months and over <strong>2,000 servers</strong> in the first six months.
+               </p>
+               <p class="motivation">
+                  Our community's excitement keeps us motivated to continuously improve and add new features. 
+                  At Central, we're dedicated to providing the best ER:LC bot experience for your Discord server. 
+               </p>
+               <div class="features">
+                  <h3>Our Features</h3>
+                  <ul>
+                     <li><i class="fas fa-check-circle"></i> Basic moderation commands</li>
+                     <li><i class="fas fa-check-circle"></i> Advanced session management</li>
+                     <li><i class="fas fa-check-circle"></i> Infraction tracking</li>
+                     <li><i class="fas fa-check-circle"></i> And so much more...</li>
+                  </ul>
+               </div>
+               <p class="journey">
+                  Join us on this journey as we strive to be the best ER:LC bot available, making server management a breeze 
+                  for you and your community. For more information, click the button below to join our Discord support server.
+               </p>
+               <div class="cta">
+                  <a href="https://discord.gg/VQVCbj284G" class="btn btn-primary">Join Now</a>
+               </div>
+            </div>
          </div>
       </div>
+      <style>
+         body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+         }
+         .content {
+            text-align: center;
+            padding: 20px;
+         }
+         .title {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+         }
+         .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+         }
+         .about-content .intro {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+         }
+         .about-content .intro .established {
+            color: #88d7ff;
+         }
+         .about-content .motivation {
+            margin-bottom: 1.5em;
+         }
+         .features {
+            text-align: left;
+            margin-bottom: 1.5em;
+         }
+         .features h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+            color: #88d7ff;
+         }
+         .features ul {
+            list-style-type: none;
+            padding-left: 0;
+         }
+         .features ul li {
+            background: #1e1e1e;
+            padding: 0.5em 1em;
+            margin-bottom: 0.5em;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+         }
+         .features ul li i {
+            color: #88d7ff;
+            margin-right: 10px;
+         }
+         .journey {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+         }
+         .cta .btn {
+            font-size: 1.2em;
+            padding: 0.75em 1.5em;
+            border-radius: 5px;
+            background-color: #88d7ff;
+            color: #fff;
+            text-decoration: none;
+         }
+         .cta .btn:hover {
+            background-color: #88d7ff;
+         }
+      </style>
+        <button id="scrollToTopBtn" onclick="scrollToTop()">
+         <i class="fas fa-arrow-up"></i>
+       </button>
+     
       <script src="../index.js"></script>
    </body>
 </html>

@@ -111,3 +111,17 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
 }
+
+window.onscroll = function() {
+    var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  };
+  
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  

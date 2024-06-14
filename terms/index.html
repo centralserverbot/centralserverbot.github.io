@@ -38,7 +38,7 @@
       <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
       <ul class="mainMenu noselect">
         <li><a href="../"><i class="fas fa-home"></i> Home</a></li>
-        <li><i class="far fa-list-alt"></i> Commands</a></li>
+        <li><a href="../commands/"><i class="far fa-list-alt"></i> Commands</a></li>
         <li><a href="../changelog/"><i class="fas fa-scroll"></i> Changelog</a></li>
         <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
         <li><a href="https://discord.gg/VQVCbj284G" target="_none"><i class="fas fa-headset"></i> Support</a></li>
@@ -57,47 +57,47 @@
         <span class="expand" onclick="openSidePanel()"><i class="fas fa-caret-right"></i></span>
 
         <div class="sidepanel">
-          <div class="divider left"></div>
-        
-          <a class="title" href="#accept">Acceptance of Terms</a>
-        
-          <div class="divider left"></div>
-        
-          <a class="title" href="#use">Use of the Bot</a>
-        
-          <div class="divider left"></div>
-
-          <a class="title" href="#content">Bot Content</a>
+          <center><h3>Sections</h3></center>
+          <br>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('accept')">Acceptance of Terms</a>
         
           <div class="divider left"></div>
         
-          <a class="title" href="#privacy">Privacy</a>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('use')">Use of the Bot</a>
         
           <div class="divider left"></div>
         
-          <a class="title" href="#bolo">Be On Look Out</a>
-
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('content')">Bot Content</a>
+        
           <div class="divider left"></div>
         
-          <a class="title" href="#term">Termination</a>
-
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('privacy')">Privacy</a>
+        
           <div class="divider left"></div>
         
-          <a class="title" href="#change">Changes to Terms</a>
-
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('bolo')">Be On Look Out</a>
+        
           <div class="divider left"></div>
         
-          <a class="title" href="#disclaimer">Disclaimer</a>
-
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('term')">Termination</a>
+        
           <div class="divider left"></div>
         
-          <a class="title" href="#gov">Governing Law</a>
-
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('change')">Changes to Terms</a>
+        
           <div class="divider left"></div>
         
-          <a class="title" href="#contact">Contact Information</a>
-
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('disclaimer')">Disclaimer</a>
+        
+          <div class="divider left"></div>
+        
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('gov')">Governing Law</a>
+        
+          <div class="divider left"></div>
+        
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('contact')">Contact Information</a>
         </div>
+        
         
         
 
@@ -221,7 +221,7 @@
                     <li>If a BOLO is to be repealed, 24 hours must have past from the initial BOLOing time.</li>
                     <li>A BOLO appeal must be initiated by the person BOLOed.</li>
                   </ul>
-                </p>h
+                </p>
               </li>
               <li>
                 <h3>False & Framed BOLOs</h3>
@@ -264,13 +264,21 @@
     </div>
   </div>
 
+
+  <button id="scrollToTopBtn" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <script>
-    function scrollToSection(sectionId) {
-      var element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+function scrollToSection(sectionId) {
+  var element = document.getElementById(sectionId);
+  if (element) {
+    var yOffset = -75; // Adjust this value to match the height of your navigation bar
+    var y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}
+
   </script>
   <script src="../index.js"></script>
   <script src="./terms.js"></script>

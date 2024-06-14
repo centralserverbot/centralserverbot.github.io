@@ -37,9 +37,9 @@
       <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
       <ul class="mainMenu noselect">
         <li><a href="../"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
         <li><a class="active" href="#"><i class="far fa-list-alt"></i> Commands</a></li>
         <li><a href="../changelog/"><i class="fas fa-scroll"></i> Changelog</a></li>
-        <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
         <li><a href="https://discord.gg/VQVCbj284G" target="_none"><i class="fas fa-headset"></i> Support</a></li>
         <li><a class="invite noselect" href="https://discord.com/api/oauth2/authorize?client_id=1173444104684847116&permissions=8&scope=bot" target="_none"><i
               class="fab fa-discord"></i> Add to server</a></li>
@@ -56,40 +56,29 @@
         <span class="expand" onclick="openSidePanel()"><i class="fas fa-caret-right"></i></span>
 
         <div class="sidepanel">
-          <div class="divider left"></div>
-        
-          <a class="title" href="#serverstarter">Server Starter</a>
-          <ul>
-            <li class="section" onclick="scrollToSection('serverstarter')">Server Starter Commands</li>
-          </ul>
+        <center><h3>Sections</h3></center>
+        <br>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('serverstarter')">Server Starter</a>
         
           <div class="divider left"></div>
         
-          <a class="title" href="#highrank">High Rank</a>
-          <ul>
-            <li class="section" onclick="scrollToSection('highrank')">High Rank Commands</li>
-          </ul>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('highrank')">High Rank</a>
         
           <div class="divider left"></div>
 
-          <a class="title" href="#moderation">Moderation</a>
-          <ul>
-            <li class="section" onclick="scrollToSection('moderation')">Moderation Commands</li>
-          </ul>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('moderation')">Moderation</a>
         
           <div class="divider left"></div>
         
-          <a class="title" href="#general">General</a>
-          <ul>
-            <li class="section" onclick="scrollToSection('general')">General Commands</li>
-          </ul>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('general')">General</a>
         
           <div class="divider left"></div>
         
-          <a class="title" href="#economy">Economy</a>
-          <ul>
-            <li class="section" onclick="scrollToSection('economy')">Economy Commands</li>
-          </ul>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('economy')">Economy</a>
+
+          <div class="divider left"></div>
+        
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('api')">ER:LC API</a>
         </div>
         
         
@@ -203,6 +192,8 @@
             <li><span class="codeBlock">/erlc command custom [command]</span></li>
             
           </ul>
+
+          <br>
         </div>
 
         
@@ -215,13 +206,20 @@
     </div>
   </div>
 
+  <button id="scrollToTopBtn" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <script>
-    function scrollToSection(sectionId) {
-      var element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+function scrollToSection(sectionId) {
+  var element = document.getElementById(sectionId);
+  if (element) {
+    var yOffset = -75; // Adjust this value to match the height of your navigation bar
+    var y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}
+
   </script>
   <script src="../index.js"></script>
   <script src="./commands.js"></script>

@@ -38,9 +38,9 @@
       <div class="openMenu noselect"><i class="fa fa-bars"></i></div>
       <ul class="mainMenu noselect">
         <li><a href="../"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
         <li><a href="../commands/"><i class="far fa-list-alt"></i> Commands</a></li>
         <li><a class="active" target="_none"><i class="fas fa-scroll"></i> Changelog</a></li>
-        <li><a href="../about"><i class="fas fa-quote-left"></i> About</a></li>
         <li><a href="https://discord.gg/VQVCbj284G" target="_none"><i class="fas fa-headset"></i> Support</a></li>
         <li><a class="invite noselect" href="https://discord.com/api/oauth2/authorize?client_id=1173444104684847116&permissions=8&scope=bot" target="_none"><i
               class="fab fa-discord"></i> Add to server</a></li>
@@ -67,10 +67,52 @@
             Showing previous updates, with most recent at the top!
           </p>
 
-   
+                    <!--
+          <section id = "1.x.x">
+            <h2>Version 1.x.x () <span class="current-flag">CURRENT</span></h2>
+            <p>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </p>
+          </section>
+          -->
+
+          <section id = "1.9.0">
+            <h2>Version 1.9.0 (Major) <span class="current-flag">CURRENT</span></h2>
+            <p>
+              <ul></ul>
+              🔔  ⠀New Additions
+              <ul>
+                <li>Ban appeals - preset questions (Configuration needed!)</li>
+                <li>Request embed customization (Configuration needed!)</li>
+                <li>Added LOA's! 🎉 - Needs configuration, and allows people to request an LOA!</li>
+                <li>Added new blacklisting feature to further enforce Central's <a href="https://centralbot.xyz/terms">Terms of Service</a>. (Section 6 ~ Termination)</li>
+                <li>This is a Central Staff only feature, allowing our staff to "Terminate" someone's access to bot commands / systems.</li>
+              </ul>
+              <br>
+              ⭐ ⠀ Changes
+              <ul>
+                <li>If someone voted for a session and the session begins, those who voted will be directly messaged!</li>
+                <li>Added a <span class="codeBlock">Live Player Count</span> to session start embeds on servers that have the API package and have enabled this feature. (Updated every 3 minutes)</li>
+                <li>Revamped Website <a href="https://centralbot.xyz/about">About Page</a>.</li>
+                <li>Made changes to the <a href="https://centralbot.xyz/commands">Command Page</a>'s navigation side-bar</li>
+                <li>Made changes to the <a href="https://centralbot.xyz/terms">Terms of Service Page</a>'s navigation side-bar</li>
+                <li>Added a scroll back to top button on all pages that you can scroll down on.</li>
+              </ul>
+              <br>
+              🐛 ⠀ Bug Fixes
+              <ul>
+                <li>Fixed voters message appearing blank when no one voted, made it not send at all.</li>
+                <li>And other, non important bug fixes.</li>
+              </ul>
+            </p>
+          </section>
 
           <section id = "1.8.5">
-            <h2>Version 1.8.5 (Minor) <span class="current-flag">CURRENT</span></h2>
+            <h2>Version 1.8.5 (Minor)</h2>
             <p>
               <ul>
                 <li>Addition of Website changelog dating back to 1.7.0 ~ Check Discord for further versions!</li>
@@ -141,6 +183,7 @@
                 <li>Added <span class="codeBlock">-purge {number}</span> (Manage Messages permission needed!)</li>
                 <li>Added ability to change the bots prefix (Configuration needed!) (Suggested by: saadalhajraf)</li>
               </ul>
+              <br>
               💎  ⠀Premium Additions
               <ul>
                 <li>Customization over welcome message (Configuration needed!)</li>
@@ -151,6 +194,7 @@
                   <li>Get started with <span class="codeBlock">/premium!</span></li>
                 </ul>
               </ul>
+              <br>
               ⭐ ⠀ Changes
               <ul>
                 <li>Added <i>official</i> beta testing. Hand selected at the moment.</li>
@@ -190,21 +234,19 @@
             </p>
           </section>
 
-          <!--
-          <section id = "1.x.x">
-            <h2>Version 1.x.x</h2>
-            <p>
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </p>
+          <section>
+            <h2>Further Versions are listed in the Discord's Update Channel.</h2>
+            <br>
+            <br>
           </section>
-          -->
+
       </div>
     </div>
-  </div>
+  </div>  
+  <button id="scrollToTopBtn" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
 
   <script>
     function scrollToSection(sectionId) {
