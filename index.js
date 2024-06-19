@@ -103,8 +103,9 @@ if (width < 650) {
 
 var myVar;
 
-function loaderFunction() {
-  myVar = setTimeout(showPage, 1400);
+function loaderFunction() {  
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("page").style.display = "block";
 }
 
 function showPage() {
