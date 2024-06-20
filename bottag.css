@@ -1,4 +1,4 @@
-.botText_daff56 {    
+.botText_a02df3 {    
     font-size: 10px;
     visibility: hidden;
     position: relative;
@@ -6,7 +6,7 @@
 }
 
 
-.botText_daff56::before { 
+.botText_a02df3::before { 
     content: 'BOT';
     visibility: visible;
     position: absolute;
