@@ -56,32 +56,32 @@
         <span class="expand" onclick="openSidePanel()"><i class="fas fa-caret-right"></i></span>
 
         <div class="sidepanel">
-        <center><h3>Sections</h3></center>
-        <br>
-          <a class="title" href="javascript:void(0);" onclick="scrollToSection('serverstarter')">Server Starter</a>
-        
-          <div class="divider left"></div>
-        
-          <a class="title" href="javascript:void(0);" onclick="scrollToSection('highrank')">High Rank</a>
-        
-          <div class="divider left"></div>
+          <center><h3>Sections</h3></center>
+          <br>
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('serverstarter')">Sessions</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('infraction')">Infractions & Promotions</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('config')">Configuration</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('giveaway')">Giveaway</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('request')">Request</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('loa')">Leave of Absence</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('dispatch')">Dispatching</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('feedest')">Feedback & Suggestions</a>
 
           <a class="title" href="javascript:void(0);" onclick="scrollToSection('moderation')">Moderation</a>
-        
-          <div class="divider left"></div>
-        
-          <a class="title" href="javascript:void(0);" onclick="scrollToSection('general')">General</a>
-        
-          <div class="divider left"></div>
-        
+
           <a class="title" href="javascript:void(0);" onclick="scrollToSection('economy')">Economy</a>
 
-          <div class="divider left"></div>
-        
           <a class="title" href="javascript:void(0);" onclick="scrollToSection('api')">ER:LC API</a>
+
+          <a class="title" href="javascript:void(0);" onclick="scrollToSection('general')">Miscellaneous</a>
         </div>
-        
-        
 
         <div class="right-col">
           <h1 id="commands">Commands</h1>
@@ -94,8 +94,8 @@
               <li><span class="codeBlock">... ~ 💎</span> : Premium Only Feature</li>
             </ul>
           </div>
-        
-          <h2  id="serverstarter">Server Starter Commands</h2>
+
+          <h2 id="serverstarter">Session Commands</h2>
           <ul>
             <li><span class="codeBlock">/session start</span></li>
             <li><span class="codeBlock">/session vote</span></li>
@@ -103,25 +103,53 @@
             <li><span class="codeBlock">/session low</span></li>
             <li><span class="codeBlock">/session full</span></li>
           </ul>
-        
-          <h2 id="highrank" >High Rank Commands</h2>
+
+          <h2 id="infraction">Infraction & Promotion Commands</h2>
           <ul>
-            <li><span class="codeBlock">/infraction create {target} {reason} {punishment} [notes]</span></li>
+            <li><span class="codeBlock">/infraction issue {target} {reason} {punishment} [notes]</span></li>
             <li><span class="codeBlock">/infraction list {target}</span></li>
             <li><span class="codeBlock">/infraction remove {target} {case}</span></li>
             <li><span class="codeBlock">/promotion grant {user} {rank} {user}</span></li>
-            <li><span class="codeBlock">/bolo create {user} {reason} {proof} [proof 2 - 5] [anonymous?]</span></li>
-            <li><span class="codeBlock">/bolo list {user}</span></li>
+          </ul>
+
+          <h2 id="config">Configuration Commands</h2>
+          <ul>
             <li><span class="codeBlock">/config</span></li>
-            <li><span class="codeBlock">/item add {name} {price} {collection}</span></li>
-            <li><span class="codeBlock">/item remove {name}</span></li>
-            <li><span class="codeBlock">-say {message}</span></li>
+          </ul>
+
+          <h2 id="giveaway">Giveaway Commands</h2>
+          <ul>
             <li><span class="codeBlock">/giveaway create</span></li>
             <li><span class="codeBlock">/giveaway reroll</span></li>
             <li><span class="codeBlock">/giveaway end</span></li>
           </ul>
-        
-          <h2 id="moderation" >Moderation Commands</h2>
+
+          <h2 id="request">Request Commands</h2>
+          <ul>
+            <li><span class="codeBlock">/request online</span></li>
+            <li><span class="codeBlock">/request moderator</span></li>
+            <li><span class="codeBlock">/request administrator</span></li>
+            <li><span class="codeBlock">/request custom {role} ~ 💎</span></li>
+          </ul>
+
+          <h2 id="loa">Leave of Absence Commands</h2>
+          <ul>
+            <li><span class="codeBlock">/loa request {start} {end} {reason}</span></li>
+            <li><span class="codeBlock">/loa manage</span></li>
+          </ul>
+
+          <h2 id="dispatch">Dispatch Commands</h2>
+          <ul>
+            <li><span class="codeBlock">/911</span></li>
+          </ul>
+
+          <h2 id="feedest">Feedback & Suggestion Commands</h2>
+          <ul>
+            <li><span class="codeBlock">/feedback</span></li>
+            <li><span class="codeBlock">/suggest submit</span></li>
+          </ul>
+
+          <h2 id="moderation">Moderation Commands</h2>
           <ul>
             <li><span class="codeBlock">/warn {user} {reason}</span></li>
             <li><span class="codeBlock">/timeout {user} {duration} {reason}</span></li>
@@ -134,40 +162,22 @@
             <li><span class="codeBlock">/topic change [requested topic] [anonymous?]</span></li>
           </ul>
 
-          <h2 id="general">General Commands</h2>
-          <ul>
-            <li><span class="codeBlock">/911</span></li>
-            <li><span class="codeBlock">/feedback</span></li>
-            <li><span class="codeBlock">/suggest submit</span></li>
-            <li><span class="codeBlock">/request online</span></li>
-            <li><span class="codeBlock">/request moderator</span></li>
-            <li><span class="codeBlock">/request administrator</span></li>
-            <li><span class="codeBlock">/request custom {role} ~ 💎</span></li>
-            <li><span class="codeBlock">/premium || Allows premium subscribers to customize premium features! || ~ 💎</span></li>
-            <li><span class="codeBlock">-ping</span></li>
-            <li><span class="codeBlock">-id {username}</span></li>
-            <li><span class="codeBlock">-membercount</span></li>
-            <li><span class="codeBlock">-membersearch {query}</span></li>
-            <li><span class="codeBlock">-members {query}</span></li>
-            <li><span class="codeBlock">-whois [ID, @Mention, Username, Or Blank] (-w)</span></li>
-
-          </ul>
-        
           <h2 id="economy">Economy Commands</h2>
           <ul>
+            <li><span class="codeBlock">/item add {name} {price} {collection}</span></li>
+            <li><span class="codeBlock">/item remove {name}</span></li>
             <li><span class="codeBlock">-economyenable</span></li>
             <li><span class="codeBlock">-economydisable</span></li>
             <li><span class="codeBlock">-economyreset</span></li>
             <li><span class="codeBlock">-bal</span></li>
-            <li><span class="codeBlock">-with {ammount}</span></li>
+            <li><span class="codeBlock">-with {amount}</span></li>
             <li><span class="codeBlock">-rob {@Mention}</span></li>
             <li><span class="codeBlock">-pay {@Mention}</span></li>
-            <li><span class="codeBlock">-buy {tem name}</span></li>
+            <li><span class="codeBlock">-buy {item name}</span></li>
             <li><span class="codeBlock">-collect</span></li>
             <li><span class="codeBlock">-store</span></li>
             <li><span class="codeBlock">-lb (leaderboard)</span></li>
           </ul>
-
 
           <h2 id="api">ER:LC API Commands</h2>
           <ul>
@@ -190,18 +200,21 @@
             <li><span class="codeBlock">/erlc command message</span></li>
             <li><span class="codeBlock">/erlc command hint</span></li>
             <li><span class="codeBlock">/erlc command custom [command]</span></li>
-            
+          </ul>
+          
+          <h2 id="general">Miscellaneous Commands</h2>
+          <ul>
+            <li><span class="codeBlock">/premium || Allows premium subscribers to customize premium features! || ~ 💎</span></li>
+            <li><span class="codeBlock">-ping</span></li>
+            <li><span class="codeBlock">-id {username}</span></li>
+            <li><span class="codeBlock">-membercount</span></li>
+            <li><span class="codeBlock">-membersearch {query}</span></li>
+            <li><span class="codeBlock">-members {query}</span></li>
+            <li><span class="codeBlock">-whois [ID, @Mention, Username, Or Blank] (-w)</span></li>
           </ul>
 
           <br>
         </div>
-
-        
-         
- 
-        
-        
-
       </div>
     </div>
   </div>
