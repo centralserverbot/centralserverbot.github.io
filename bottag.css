@@ -11,3 +11,10 @@
     visibility: visible;
     position: absolute;
 }
+
+.userPopoutInner_c69a7b {
+    overflow: auto;
+}
+.userPopoutInner_c69a7b::-webkit-scrollbar {
+    display: none;
+}
