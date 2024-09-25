@@ -49,4 +49,4 @@ Mr. Brightside:The Killers:None:Jeff Saltzman:Rock:Apple Music & Spotify;
 Iris:Goo Goo Dolls:None:Rob Cavallo:Rock:Apple Music & Spotify;
 Blurred Lines:Robin Thicke:T.I. & Pharrell:Pharrell Williams:R&B:Apple Music & Spotify;
 Take On Me:A-ha:None:Alan Tarney:Synthpop:Apple Music & Spotify;
-Shake It Off:Taylor Swift:None:Max Martin:Pop:Apple Music & Spotify;
+Shake It Off:Taylor Swift:None:Max Martin:Pop:Apple Music & Spotify
