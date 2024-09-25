@@ -1,5 +1,5 @@
 Billie Jean:Michael Jackson:None:Quincy Jones:Post-disco:Apple Music & Spotify;
-Never Gonna Give You Up:Rick Astley:Stock Aitken Waterman:Apple Music & Spotify;
+Never Gonna Give You Up:Rick Astley:Stock Aitken Waterman:Dance Pop:Apple Music & Spotify;
 Hotel California:Eagles:None:Bill Szymczyk:Rock:Apple Music & Spotify;
 Bohemian Rhapsody:Queen:None:Roy Thomas Baker:Rock:Apple Music & Spotify;
 Thriller:Michael Jackson:None:Quincy Jones:Pop:Apple Music & Spotify;
